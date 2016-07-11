@@ -1,1 +1,4 @@
 /keys.json
+/session/container_file/*
+/session/container_file_lock/*
+/static/img/uploads/*
