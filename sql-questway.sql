@@ -94,6 +94,7 @@ ON DELETE CASCADE);
 CREATE TABLE qw_get_filter(
 filter_id int,
 application_id int,
+got_it BOOLEAN,
 PRIMARY KEY(filter_id, application_id),
 CONSTRAINT filter_to_filter FOREIGN KEY (filter_id) REFERENCES qw_filter (id)
 ON DELETE CASCADE,
