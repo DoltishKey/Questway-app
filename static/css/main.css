@@ -375,9 +375,7 @@ input:focus, textarea:focus {
 }
 
 .ads .ad .content, .new_ads .ad .content{
-    display: table;
     height: 80px;
-    width: calc(100% - 80px);
 }
 
 .logo{
@@ -405,10 +403,8 @@ input:focus, textarea:focus {
 }
 
 .ads .ad .text, .new_ads .ad .text{
-    display: table-cell;
     vertical-align: middle;
     margin-top: 10px;
-    padding-left: 25px;
     max-width: 70%;
 }
 
@@ -426,34 +422,45 @@ input:focus, textarea:focus {
     display: none;
 }
 
-
-.go{
-    background-image: url('/static/img/icons/arrow_white.svg');
-    background-repeat: no-repeat;
-    background-position: center center;
-    background-size: 50%;
-}
-
 .new_ads{
     background-color: #d6d6d6;
 }
 
-.ads .ad .go, .new_ads .ad .go{
-    position: absolute;
-    right: 15px;
-    margin-top: 20px;
-    margin-right: 10px;
-    width: 40px;
-    height: 40px;
-    -webkit-border-radius: 50%;
-    -moz-border-radius: 50%;
-    border-radius: 50%;
-    background-color: #E74B4E;
+.message{
+    background-color: #fff;
+    -webkit-border-radius: 30px;
+    -moz-border-radius: 30px;
+    border-radius: 30px;
+    padding: 20px 0px
 }
 
-.ad:hover .go{
-    background-color: #B42F35;
+
+.message.success{
+    color: #2CBD66;
+    border: 4px solid #2CBD66;
 }
+
+.about.application .message p{
+    margin-bottom: 20px;
+}
+
+.about.application .message.success h3{
+    padding: 0px;
+    color: #2CBD66;
+}
+
+.message.error{
+    color: #E74B4E;
+    border: 4px solid #E74B4E;
+}
+
+.about.application .message.error h3{
+    padding: 0px;
+    color: #E74B4E;
+}
+
+
+
 
 .admin_setting{
     background-color: #2BCAD9;
@@ -775,25 +782,80 @@ hr{
     border-radius: 80px;
 }
 
-.user .content{
-    display: table-cell;
-    vertical-align: middle;
-    height: 80px;
-    color: #E74B4E;
+
+.flexer_parent{
+    display: flex;
+    width: 100%;
+    align-items: center;
 }
 
-.user .content .label_arrow{
-        position: absolute;
-        right: 10px;
-        margin-top: 15px;
+.content.flexer{
+    display: flex;
+    align-items: center;
+    width: 100%;
+    color: #E74B4E;
+    justify-content:space-between;
+
 }
+
+.content.flexer > *{
+    align-self: center;
+}
+
+.content.flexer > div:first-child{
+    flex-basis: 45%;
+    margin-left: 15px;
+}
+
+.content.flexer > .text{
+    margin-left: 15px;
+}
+
+.content.flexer > .logo:first-child{
+    flex-basis: 125px;
+    margin-left: 25px;
+}
+
+.content.flexer > div:nth-child(2){
+    flex-basis: content;
+}
+
+.content.flexer > div:last-child{
+    flex-basis: content;
+    margin-right: 15px;
+}
+
+.content.flexer > .go:last-child{
+    flex-basis: 40px;
+    margin-right: 15px;
+}
+
+ .go{
+    display: inline-block;
+    margin-right: 15px;
+    width: 40px;
+    height: 40px;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    border-radius: 50%;
+    background-color: #E74B4E;
+    background-image: url('/static/img/icons/arrow_white.svg');
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: 50%;
+    vertical-align: middle;
+}
+
+.flexer_parent:hover .go{
+    background-color: #B42F35;
+}
+
 
 .user_icon{
     display: inline-block;
     vertical-align: middle;
     height: 50px;
     width: 50px;
-    margin-left: 15px;
     margin-right: 5px;
     background-repeat: no-repeat;
     background-position: center center;
@@ -808,12 +870,12 @@ hr{
 
 }
 
-.user .text{
+.flexer .text{
     display: inline-block;
     vertical-align: middle;
 }
 
-.user .text p{
+.flexer .text p{
     color: #d6d6d6;
 }
 
@@ -962,37 +1024,12 @@ hr{
 }
 
 .user_ads .ad{
-    display: block;
     height: 80px;
     margin: 10px 0px;
     background-color: #fff;
     -webkit-border-radius: 80px;
     -moz-border-radius: 80px;
     border-radius: 80px;
-}
-
-.user_ads .ad .content{
-    margin-left: 15px;
-    display: flex;
-    align-items: center;
-    vertical-align: middle;
-    height: 80px;
-}
-
-.user_ads .ad .text{
-    display: inline-block;
-    width: 100%;
-}
-
-.user_ads .ad h4{
-    display: inline-block;
-    width: 45%;
-    color: #E74B4E;
-    font-size: 1.1em;
-}
-
-.user_ads .ad p{
-    color: #d6d6d6;
 }
 
 .user_ads .ad .num_applications, .user_ads .ad .num_applications > *{
@@ -1624,6 +1661,18 @@ hr{
     margin: 3px 0px;
 }
 
+.shadow{
+    display: none;
+    position: absolute;
+    top: 0px;
+    left:0px;
+    height: 0%;
+    width: 0%;
+    background-color: rgba(0,0,0,0.7);
+    overflow: scroll;
+    z-index: 15;
+}
+
 
 @media screen and (min-width:960px){
 
@@ -1751,6 +1800,74 @@ hr{
     .about.application .container{
         padding: 40px 0px;
         width: 50%;
+    }
+
+    .handle_users .container{
+        width: 70%;
+        margin: 0 auto;
+    }
+
+    .user .content .label_arrow{
+        right: 210px;
+    }
+
+    .overlay{
+        width: 80%;
+        height: 85%;
+        left:0;
+        right: 0;
+        margin-left: auto;
+        margin-right: auto;
+        top: 7.5%;
+        -webkit-border-radius: 30px;
+        -moz-border-radius: 30px;
+        border-radius: 30px;
+    }
+
+    .shadow{
+        height: 100%;
+        width: 100%;
+    }
+
+    .overlay .close, .overlay .applicant_close, .label_close{
+        padding: 10px;
+        margin-left: 10px;
+        margin-top: 5px;
+    }
+
+    .user .content .label_arrow{
+        margin-top: -5px;
+    }
+
+    .label_arrow{
+        background-image: url('/static/img/icons/arrow_white.svg');
+        background-size: 40%;
+        background-color: #E74B4E;
+        -webkit-border-radius: 50%;
+        -moz-border-radius: 50%;
+        border-radius: 50%;
+        width: 60px;
+        height: 60px;
+    }
+
+    .overlay .container{
+        width: 60%;
+        margin: 0 auto;
+    }
+
+    .user_ads .container{
+        width: 70%;
+    }
+
+    .user_ads .ad .go{
+        width: 60px;
+        height: 60px;
+    }
+
+    .applications .application .applicant_profile{
+        width: 20%;
+        float: left;
+        margin: 10px 1%;
     }
 
 }

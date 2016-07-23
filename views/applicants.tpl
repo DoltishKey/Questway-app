@@ -68,6 +68,7 @@
                                 %end
                             </div>
                         </div>
+                        <div class="shadow"></div>
                         <div class="application_overlay overlay">
                             <div class="applicant_close close_icon"></div>
                             <hr>
@@ -101,7 +102,7 @@
                                                 %end
                                             %end
                                         </div>
-                                        <div class="label_arrow"></div>
+                                        <div class=" label_arrow"></div>
                                     </div>
                                 </div>
                                 <div class="application_members">
@@ -144,6 +145,7 @@
                                         <h3>Labels</h3>
                                         <div>
                                             <ul>
+                                                %print labels
                                                 %for label in labels:
                                                     <li>
                                                         <div class="label" data-label="{{label[0]}}" style="background-color:{{label[3]}};">

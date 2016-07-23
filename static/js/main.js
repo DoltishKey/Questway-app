@@ -296,6 +296,7 @@ function count_chars(){
 function new_user(){
     $('.overlay_open').click(function(){
         $('.overlay').show()
+        $('.shadow').show()
         $('body').addClass('fixed')
         var pos_top = $(window).scrollTop();
         close_new_user()
@@ -305,6 +306,7 @@ function new_user(){
 function close_new_user(pos_top){
     $('.close').click(function(){
         $('.overlay').hide()
+        $('.shadow').hide()
         $('body').removeClass('fixed')
         window.scrollTo(0, pos_top);
     })
@@ -314,6 +316,7 @@ function applicant_overlay(){
     $('.applicant_overlay_opener').click(function(){
         parent = $(this).parents('.application')
         parent.find('.overlay').show()
+        parent.find('.shadow').show()
         var pos_top = $(window).scrollTop();
         $('body').addClass('fixed')
         close_applicant_overlay(pos_top)
@@ -323,6 +326,7 @@ function applicant_overlay(){
 function close_applicant_overlay(pos_top){
     $('.applicant_close').click(function(){
         $(this).parents('.overlay').hide()
+        $(this).parents('.shadow').hide()
         $('body').removeClass('fixed')
         window.scrollTo(0, pos_top);
     })
@@ -379,13 +383,23 @@ function apply_job(){
         event.preventDefault(event);
         ad_nr = application_nr = $(this).data('ad-id')
         this_form = $(this)
-
         $.ajax({
             type: 'POST',
-            url: '/apply_in_job/'+ad_nr,
+            url: '/apply_in_job/'+ ad_nr,
             data: $(this).serialize(),
-            complete: function(response) {
-                this_form.hide()    
+            success: function(response) {
+                this_form.hide()
+                $('.message').show()
+                if (response == 'ok'){
+                    $('.message').addClass('success')
+                    $('.message').find('h3').text('Yey!')
+                    $('.message').find('p').text('Your application has been sent!')
+                }
+                else{
+                    $('.message').addClass('error')
+                    $('.message').find('h3').text('Aww!')
+                    $('.message').find('p').text('Something went wrong!')
+                }
             }
         });
     });

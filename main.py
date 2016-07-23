@@ -464,8 +464,11 @@ def no_get():
 def application(job_nr):
 	try:
 		job_nr = int(job_nr)
+		print job_nr
+		print type(job_nr)
 	except ValueError:
 		return 'error'
+
 	cursor = call_database()
 	global db
 	result = addmod.apply(cursor, job_nr)

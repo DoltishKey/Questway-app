@@ -14,15 +14,10 @@
                         <p>There is no ads... yet.</p>
                     %else:
                         %for ad in ads:
-                            <a href="/job/applications/{{ad[0]}}" class="ad">
-                                <div class="content">
+                            <a href="/job/applications/{{ad[0]}}" class="ad flexer_parent">
+                                <div class="content flexer">
                                     <div class="text">
                                         <h4>{{ad[3]}}</h4>
-                                        <div class="num_applications">
-                                            <div class="user_icon red"></div>
-                                            <p>{{ad[12]}} <span>applications<span></p>
-                                        </div>
-                                         <div class="go"></div>
                                         <div class="status">
                                             %if ad[6] == 1:
                                                 <p>Publicerad</p>
@@ -30,7 +25,12 @@
                                                 <p>Väntar på att bli godkänd</p>
                                              %end
                                          </div>
-                                     </div>
+                                    </div>
+                                    <div class="num_applications">
+                                        <div class="user_icon red"></div>
+                                        <p>{{ad[12]}} <span>applications<span></p>
+                                    </div>
+                                    <div class="go"></div>
                                  </div>
                             </a>
                         %end
@@ -41,6 +41,7 @@
                 </div>
             </div>
 
+            <div class="shadow"></div>
             <div class="new_ad_form overlay">
                 <div class="close close_icon"></div>
                 <hr>

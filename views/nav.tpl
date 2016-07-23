@@ -1,7 +1,9 @@
 <header>
     <div class="container" style="padding:0px;">
     <div class="logo_container">
-        <a href="/">Questway</a>
+        <a href="/">
+            <img src="/static/img/logo.svg" alt="questway_logo" />
+        </a>
     </div>
     <div class="hide_show_menu_container">
         <div>

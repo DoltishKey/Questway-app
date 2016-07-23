@@ -34,8 +34,8 @@
                     <h2>They want connections:</h2>
                     %if ads:
                         %for ad in ads:
-                            <a class="ad" href="/job/{{ad[0]}}">
-                                <div class="content">
+                            <a class="ad flexer_parent" href="/job/{{ad[0]}}">
+                                <div class="content flexer">
                                     %if ad[9]:
                                         <div class="logo">
                                             <div class="img" style="background-image:url({{ad[9]}});"></div>
