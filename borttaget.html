@@ -1,0 +1,13 @@
+
+<!-- Från index -->
+<div class="filter">
+    <div class="container">
+        <h2>Filter quests</h2>
+        <div class="hide_show_filter">+</div>
+        %for job_type in job_types:
+            <ul class="filters">
+                <li data-type-nr="{{job_type[0]}}">{{job_type[1]}}</li>
+            </ul>
+        %end
+    </div>
+</div>

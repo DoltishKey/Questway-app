@@ -14,21 +14,11 @@
                 <div class="container">
                     <h1>WE CONNECTS ENTREPENURES WITH STUDENTS</h1>
                     <h2>Sudent and want to get some real experience and put your skills in use? Work with an entrepenure with anything from projects to longterm commitments!</h2>
-                    <div class="btn">Find quests</div>
+                    <div class="btn">Join us</div>
                     <!--<div class="more"></div>-->
                 </div>
             </div>
-            <div class="filter">
-                <div class="container">
-                    <h2>Filter quests</h2>
-                    <div class="hide_show_filter">+</div>
-                    %for job_type in job_types:
-                        <ul class="filters">
-                            <li data-type-nr="{{job_type[0]}}">{{job_type[1]}}</li>
-                        </ul>
-                    %end
-                </div>
-            </div>
+
             <div class="ads">
                 <div class="container">
                     <h2>They want connections:</h2>
