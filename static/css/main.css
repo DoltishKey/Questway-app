@@ -136,6 +136,10 @@ header{
     display: inline-block;
     line-height: 50px;
     margin-left: 10px;
+    width:30%;
+    position:relative;
+    top:-10px;
+    left:-10px;
 }
 
 .logo_container a{
@@ -833,8 +837,8 @@ hr{
  .go{
     display: inline-block;
     margin-right: 15px;
-    width: 30px;
-    height: 30px;
+    width: 45px;
+    height: 45px;
     -webkit-border-radius: 50%;
     -moz-border-radius: 50%;
     border-radius: 50%;
@@ -1733,6 +1737,13 @@ hr{
         position: relative;
     }
 
+    .logo_container{
+        width:15%;
+        position:relative;
+        top:-15px;
+        left:-40px;
+    }
+
     .logo{
         display: inline-block;
         height: 120px;
@@ -1868,6 +1879,10 @@ hr{
         width: 20%;
         float: left;
         margin: 10px 1%;
+    }
+    .go{
+        width:30px;
+        height:30px;
     }
 
 }
