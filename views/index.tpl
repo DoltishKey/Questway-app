@@ -14,7 +14,7 @@
                 <div class="container">
                     <h1>WE CONNECTS ENTREPENURES WITH STUDENTS</h1>
                     <h2>Sudent and want to get some real experience and put your skills in use? Work with an entrepenure with anything from projects to longterm commitments!</h2>
-                    <div class="btn">Join us</div>
+                    <a href="/create_employer" class="btn red">Join us</a>
                     <!--<div class="more"></div>-->
                 </div>
             </div>
