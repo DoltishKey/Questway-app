@@ -44,6 +44,7 @@
                                 %end
                             %end
 
+                <div class="application_list">
 
                 % for application in applications:
                     <div class="application_id application" data-application="{{application[0]}}">
@@ -176,6 +177,11 @@
                         </div>
                     </div>
                 %end
+                <div class="application_id application"></div>
+                <div class="application_id application"></div>
+                <div class="application_id application"></div>
+                <div class="application_id application"></div>
+            </div>
             </div>
         </main>
         %include('footer.tpl')

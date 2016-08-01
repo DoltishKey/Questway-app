@@ -664,4 +664,4 @@ def server_static(filename):
 
 
 app = SessionMiddleware(app(), log.session_opts)
-run(app=app)
+run(host= '0.0.0.0', port=8080 , app=app)

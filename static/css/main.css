@@ -1274,14 +1274,17 @@ hr{
     border-radius: 50%;
 }
 
-.applications .application .applicant_profile{
-    padding: 15px;
-    min-height: 170px;
-    display: block;
+.applications .application{
     background-color: #E74B4E;
     -webkit-border-radius: 25px;
     -moz-border-radius: 25px;
     border-radius: 25px;
+}
+
+.applications .application .applicant_profile{
+    padding: 15px;
+    min-height: 170px;
+    display: block;
 }
 
 .applications .application .user_icon{
@@ -1875,14 +1878,76 @@ hr{
         height: 60px;
     }
 
-    .applications .application .applicant_profile{
+    .more_opt_trigger{
+        display: none;
+    }
+
+    .more_ad_opts{
+        display: inline-block;
+        float: right;
+    }
+
+    .more_ad_opts:after{
+        clear: both;
+    }
+
+    .more_ad_opts a{
+        background-color: transparent;
+        padding: 10px;
+        border: none;
+        width: auto;
+        color: #272E3F;
+    }
+
+    .more_ad_opts a:hover{
+        text-decoration: underline;
+    }
+
+    .application_list{
+        clear: both;
+        display: flex;
+        -webkit-flex-wrap: wrap;
+        flex-wrap: wrap;
+        justify-content: space-between;
+
+    }
+
+    .application_list:after{
+        content: "";
+        flex: auto;
+    }
+
+    .applications .application{
         width: 20%;
-        float: left;
-        margin: 10px 1%;
+        padding: 15px;
+    }
+
+    .applications .application .applicant_profile{
+        width: 100%;
+        padding: 0px;
+    }
+    .applications .application:hover{
+        cursor: pointer;
+        background-color: #B42F35;
+    }
+
+    .application_id:empty{
+        height:0;
+        padding: 0px 15px;
+        visibility: hidden;
     }
     .go{
         width:30px;
         height:30px;
     }
+
+    .ad_starter{
+        display: inline-block;
+    }
+
+    .user_ads .ad .num_applications p > span{
+        display: inline-block;
+    }
+
 
 }

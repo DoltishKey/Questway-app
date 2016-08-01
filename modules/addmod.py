@@ -158,12 +158,13 @@ def do_ad(cursor, user):
 
         #SQL som sätter in labels till filtreringen
         labels = []
-        colors = ['#B42F35', '#FF8528', '#FFF028', '#2CBD66', '#2BCAD9','#AD1FCA']
-        for color in colors:
-            new_item = tuple((mighty_db_says, color))
+        colors = ['#2CBD66', '#FFF028', '#FF8528', '#B42F35', '#2BCAD9','#AD1FCA']
+        label_text = ['Very good', 'Maybe', 'Need more info', 'Not good', 'Interview', 'Contacted']
+        for idx, color in enumerate(colors, start=0):
+            new_item = tuple((mighty_db_says, label_text[idx], color))
             labels.append(new_item)
 
-        sql = "INSERT INTO qw_filter (ad_id, color) VALUES ((SELECT id FROM qw_ads WHERE id = %s), %s)"
+        sql = "INSERT INTO qw_filter (ad_id, name, color) VALUES ((SELECT id FROM qw_ads WHERE id = %s), %s, %s)"
         cursor.executemany(sql, labels)
 
         return {'result':True, 'error':'None'}

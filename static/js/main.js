@@ -304,7 +304,7 @@ function new_user(){
 }
 
 function close_new_user(pos_top){
-    $('.close').click(function(){
+    $('.close, .shadow').click(function(){
         $('.overlay').hide()
         $('.shadow').hide()
         $('body').removeClass('fixed')
@@ -324,9 +324,10 @@ function applicant_overlay(){
 }
 
 function close_applicant_overlay(pos_top){
-    $('.applicant_close').click(function(){
-        $(this).parents('.overlay').hide()
-        $(this).parents('.shadow').hide()
+    $('.applicant_close, .shadow').click(function(){
+        parent = $(this).parents('.application')
+        parent.find('.overlay').hide()
+        parent.find('.shadow').hide()
         $('body').removeClass('fixed')
         window.scrollTo(0, pos_top);
     })
