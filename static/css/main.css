@@ -224,14 +224,64 @@ nav a.currentMenuItem{
 footer{
     background-color: #272E3F;
     padding: 40px 0px;
+    color:#fff;
 }
 
 footer a{
     color: #fff;
 }
 
+footer a img{
+    width:15%;
+}
+
+.footer_box{
+    padding:2% 0 2% 5%;
+    width:90%;
+}
+
+.footer_box > ul{
+    list-style: none;
+    padding:10px;
+}
+
+.footer_box > h4{
+    margin-bottom:6px;
+    color: #2CBD66;
+}
+.question_footer{
+    border:1px dotted #fff;
+    border-radius: 5px;
+    padding:2px 0 10px 0;
+
+}
+
+.question_footer > ul{
+    list-style: none;
+    padding:10px;
+}
+
+.question_footer > ul > li{
+    padding-top:3px;
+    padding-bottom:8px;
+    font-size:13px;
+    font-weight: 300;
+    line-height: 1;
+}
+
+.question_footer > ul > li > i{
+    vertical-align: middle;
+    padding-right:5px;
+}
+
+.footer_box > .help_box > a:link, a:visited{
+    color:#2BCAD9;
+}
 
 
+#logo_img_container{
+    padding:0 0 0 5%;
+}
 
 .btn{
     display: inline-block;
