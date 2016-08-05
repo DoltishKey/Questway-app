@@ -41,7 +41,7 @@
                 </div>
             </div>
 
-            <div class="shadow"></div>
+            <div class="shadow">
             <div class="new_ad_form overlay">
                 <div class="close close_icon"></div>
                 <hr>
@@ -104,6 +104,7 @@
                     </form>
                 </div>
             </div>
+        </div>
         </main>
         %include('footer.tpl')
     </body>

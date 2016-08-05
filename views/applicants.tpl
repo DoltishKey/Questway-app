@@ -69,11 +69,11 @@
                                 %end
                             </div>
                         </div>
-                        <div class="shadow"></div>
+                        <div class="shadow">
                         <div class="application_overlay overlay">
                             <div class="applicant_close close_icon"></div>
                             <hr>
-                            <div class="container this_label_cont">
+                            <div class="container this_label_cont application_info">
                                 <div class="heading">
                                     <p>{{ad_info[3]}}</p>
                                     <p>team {{applier[1]}}</p>
@@ -129,7 +129,7 @@
                                     <a class="remove_application" href="/admin_remove_application/{{ad_info[0]}}/{{application[0]}}">Ta bort ansökan</a>
                                 %end
                             </div>
-                        </div>
+
                         <div class="label_overlay">
                             <div class="label_close">
                                 <div class="back_icon"></div>
@@ -174,6 +174,8 @@
                                     </div>
                                 </div>
                             </div>
+                        </div>
+                        </div>
                         </div>
                     </div>
                 %end

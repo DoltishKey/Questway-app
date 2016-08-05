@@ -29,7 +29,7 @@
                         <div class="btn red">Create new user +</div>
                     </div>
                 </div>
-                <div class="shadow"></div>
+                <div class="shadow">
                 <div class="new_user_form overlay">
                     <div class="close close_icon"></div>
                     <hr>
@@ -55,6 +55,7 @@
                         </form>
                     </div>
                 </div>
+            </div>
             </div>
         </main>
         %include('footer.tpl')

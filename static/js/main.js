@@ -299,8 +299,15 @@ function new_user(){
         $('.shadow').show()
         $('body').addClass('fixed')
         var pos_top = $(window).scrollTop();
+        $('.shadow').scrollTop($('.shadow').scrollTop() - $('.shadow').offset().top);
         close_new_user()
     })
+
+    $('.shadow > .overlay').click(
+        function(e) {
+            e.stopPropagation();
+        }
+    );
 }
 
 function close_new_user(pos_top){
@@ -310,15 +317,22 @@ function close_new_user(pos_top){
         $('body').removeClass('fixed')
         window.scrollTo(0, pos_top);
     })
+
+    $('.shadow > .application_overlay').click(
+        function(e) {
+            e.stopPropagation();
+        }
+    );
 }
 
 function applicant_overlay(){
     $('.applicant_overlay_opener').click(function(){
         parent = $(this).parents('.application')
-        parent.find('.overlay').show()
         parent.find('.shadow').show()
+        parent.find('.overlay').show()
         var pos_top = $(window).scrollTop();
         $('body').addClass('fixed')
+        $('.shadow').scrollTop($('.shadow').scrollTop() - $('.shadow').offset().top);
         close_applicant_overlay(pos_top)
     })
 }
@@ -331,12 +345,19 @@ function close_applicant_overlay(pos_top){
         $('body').removeClass('fixed')
         window.scrollTo(0, pos_top);
     })
+
+    $('.shadow > .application_overlay').click(
+        function(e) {
+            e.stopPropagation();
+        }
+    );
 }
 
 
 function show_label_hadeling(){
     $('.label_trigger').click(function(){
         parent = $(this).parents('.application')
+        parent.find('.application_info').hide()
         parent.find('.label_overlay').addClass('show')
         hide_label_hadeling()
     })
@@ -345,6 +366,7 @@ function show_label_hadeling(){
 
 function hide_label_hadeling(){
     $('.label_close').click(function(){
+        parent.find('.application_info').show()
         $(this).parents('.label_overlay').removeClass('show')
     })
 }
