@@ -1,44 +1,46 @@
 <footer>
-    <div class="footer_box">
-        <h4>QUESTIONS? </h3>
-        <div class="question_footer">
-            <ul>
-                <li itemprop="telefon">
-                    <i class="material-icons">phone</i>
-                    <span>031-123456</span>
-                </li>
-                <li itemprop="email">
-                    <i class="material-icons">mail_outline</i>
-                    <span>kontakt@questway.se</span>
-                </li>
-                <li itemprop="adress">
-                    <i class="material-icons">location_on</i>
-                    <span>Östgötavägen 5</span>
-                </li>
-                <li itemprop="ort">
-                    <i class="material-icons">my_location</i>
-                    <span>222 25 Lund</span>
+    <div class="box_container">
+        <div class="footer_box">
+            <h4>QUESTIONS? </h3>
+            <div class="question_footer">
+                <ul>
+                    <li itemprop="telefon">
+                        <i class="material-icons">phone</i>
+                        <span>031-123456</span>
+                    </li>
+                    <li itemprop="email">
+                        <i class="material-icons">mail_outline</i>
+                        <span>kontakt@questway.se</span>
+                    </li>
+                    <li itemprop="adress">
+                        <i class="material-icons">location_on</i>
+                        <span>Östgötavägen 5</span>
+                    </li>
+                    <li itemprop="ort">
+                        <i class="material-icons">my_location</i>
+                        <span>222 25 Lund</span>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="footer_box">
+            <h4>NEED HELP?</h4>
+            <ul class="help_box">
+                <li>
+                    <p>Check out <a href="/help">FAQ</a><p>
                 </li>
             </ul>
         </div>
-    </div>
 
-    <div class="footer_box">
-        <h4>NEED HELP?</h4>
-        <ul class="help_box">
-            <li>
-                <p>Check out <a href="/help">FAQ</a><p>
-            </li>
-        </ul>
-    </div>
-
-    <div class="footer_box">
-        <h4>WHO ARE QUESTWAY?</h4>
-        <ul class="about_box">
-            <li>
-                <a href="/about_us">About us</a>
-            </li>
-        </ul>
+        <div class="footer_box">
+            <h4>WHO ARE QUESTWAY?</h4>
+            <ul class="about_box">
+                <li>
+                    <a href="/about_us">About us</a>
+                </li>
+            </ul>
+        </div>
     </div>
     <!-- **** Inkludera när ett contact-form är byggt ****
     <div class="footer_box">
@@ -51,7 +53,7 @@
     </div>
     -->
     <div class="copy_container">
-        <div class="logo_container">
+        <div class="logo_box">
             <div id="logo_img_container">
                 <a href="/">
                     <img src="/static/img/logo.svg" alt="questway_logo" />
@@ -69,7 +71,7 @@
             </div>
             <div class="copyright_content">
                 <p class="copy_r">&copy; Questway Sverige, All Rights Reserved</p>
-                <p> Questway connects entrepenures with students</p>
+                <p> Connecting business with ambition</p>
             </div>
         </div>
     </div>
