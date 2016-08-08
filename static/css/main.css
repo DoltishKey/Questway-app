@@ -223,7 +223,7 @@ nav a.currentMenuItem{
 
 footer{
     background-color: #272E3F;
-    padding: 40px 0px;
+    padding: 40px 0px 0 0;
     color:#fff;
 }
 
@@ -278,9 +278,34 @@ footer a img{
     color:#2BCAD9;
 }
 
+.copy_container{
+    background-color: #272E3F;
+    padding:10px;
+    border-top: solid 1px #fff;
+}
+
+.logo_container{
+    width:90%;
+    padding:2% 5% 2% 5%;
+}
 
 #logo_img_container{
-    padding:0 0 0 5%;
+    width:100%;
+}
+
+#logo_img_container > a > img{
+    width:20%;
+    margin-bottom:5px;
+}
+
+.copyright_content{
+    text-align: center;
+    font-size:10px;
+    margin:0 auto;
+}
+
+.copy_r{
+    padding-bottom:5px;
 }
 
 .btn{

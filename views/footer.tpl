@@ -40,18 +40,37 @@
             </li>
         </ul>
     </div>
-
+    <!-- **** Inkludera när ett contact-form är byggt ****
     <div class="footer_box">
-        <h4>CONTACT</h4>
+        <h4>GET IN TOUCH?</h4>
         <ul class="contact_box">
             <li>
                 <a href="#contact"> Contact us </a>
             </li>
         </ul>
     </div>
-    <div id="logo_img_container">
-        <a href="/">
-            <img src="/static/img/logo.svg" alt="questway_logo" />
-        </a>
+    -->
+    <div class="copy_container">
+        <div class="logo_container">
+            <div id="logo_img_container">
+                <a href="/">
+                    <img src="/static/img/logo.svg" alt="questway_logo" />
+                </a>
+                <!-- SOCIAL MEDIA
+                <div class="social_container">
+                    <a ng-href="https://www.facebook.com/Questway-1354583154571834/?fref=ts" ng-repeat="icon in socialIcons"
+                    title="Följs Questway på facebook" class="fb_link" href="https://www.facebook.com/Questway-1354583154571834/?fref=ts">
+                        <div class="round_social_icon">
+                            <img src="/static/img/logga.png" class="social_img">
+                        </div>
+                    </a>
+                </div>
+                -->
+            </div>
+            <div class="copyright_content">
+                <p class="copy_r">&copy; Questway Sverige, All Rights Reserved</p>
+                <p> Questway connects entrepenures with students</p>
+            </div>
+        </div>
     </div>
 </footer>
