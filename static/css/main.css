@@ -308,6 +308,38 @@ footer a img{
     padding-bottom:5px;
 }
 
+/* ABOUT PAGE */
+
+.qw_team{
+    background-color:#2BCAD9;
+    padding-top:25px;
+}
+
+.qw_team_profile > ul > li > h4{
+    width:100%;
+    text-align:right;
+    padding-left: 10px;
+    line-height: 1.18;
+    letter-spacing: 1.2px;
+}
+
+.qw_team_profile > ul > li > img{
+    width:150px;
+    height:150px;
+    border-radius: 50%;
+}
+
+.qw_team_profile > ul > li{
+    width:48%;
+    float:left;
+}
+
+.qw_team_profile{
+    padding-bottom:35px;
+}
+
+/* ABOUT PAGE - END */
+
 .btn{
     display: inline-block;
     margin: 10px auto;

@@ -12,16 +12,17 @@
         <main>
             <div class="main_jubo">
                 <div class="container">
-                    <h1>WE CONNECTS ENTREPENURES WITH STUDENTS</h1>
-                    <h2>Sudent and want to get some real experience and put your skills in use? Work with an entrepenure with anything from projects to longterm commitments!</h2>
-                    <a href="/create_employer" class="btn red">Join us</a>
+                    <h1>CONNECTS NEW BUSINESSES WITH STUDENTS IN SOUTHERN SWEDEN</h1>
+                    <h2>Create a quest and find out who your new co-founder or team member will be.
+                        Join us and get in touch with more people. All free!</h2>
+                    <a href="/create_employer" class="btn red">Create a quest</a>
                     <!--<div class="more"></div>-->
                 </div>
             </div>
 
             <div class="ads">
                 <div class="container">
-                    <h2>They want connections:</h2>
+                    <h2>They are looking to connect:</h2>
                     %if ads:
                         %for ad in ads:
                             <a class="ad flexer_parent" href="/job/{{ad[0]}}">
