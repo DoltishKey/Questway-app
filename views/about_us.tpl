@@ -60,6 +60,7 @@
                             </ul>
                         </li>
                     </ul>
+                </div>
             </div>
             %include('footer.tpl')
         </main>
