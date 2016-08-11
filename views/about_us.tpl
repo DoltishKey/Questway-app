@@ -32,30 +32,27 @@
                         <li class="qw_team_profile">
                             <ul>
                                 <h2>JACOB PETTERSSON</h2>
-                                <li><h4>A true programmer who loves to fence!
+                                <li><div class="bckgrd"><h4>A true programmer who loves to fence!
                                         Started the company The Working generation in 2014.
-                                        Is studying Information Architect at Malmö University.</h4></li>
-                                <li><img src="/static/img/qwback.jpg"></li>
+                                        Is studying Information Architect at Malmö University.</h4></div></li>
                                 <p>jacob.pettersson@questway.se</p>
                             </ul>
                         </li>
                         <li class="qw_team_profile">
                             <ul>
                                 <h2>JARI ROSENSTRÖM</h2>
-                                <li><h4>A creative homechef that runs his own consulting company.
+                                <li><div class="bckgrd"><h4>A creative homechef that runs his own consulting company.
                                         Is one of a kind when it comes to programming and is studying
-                                        Information Architect at Malmö University.</h4></li>
-                                <li><img src="/static/img/qwback.jpg"></li>
+                                        Information Architect at Malmö University.</h4></div></li>
                                 <p>jari.rosenstrom@questway.se</p>
                             </ul>
                         </li>
                         <li class="qw_team_profile">
                             <ul>
                                 <h2>JENNY SANDBERG</h2>
-                                <li><h4>A crazy-cat-lady, musical fan and a squash player who started working in
+                                <li><div class="bckgrd"><h4>A crazy-cat-lady, musical fan and a squash player who started working in
                                         the local innovationsystem in 2013.
-                                        Currently working as a business developer at Drivhuset Malmö.</h4></li>
-                                <li><img src="/static/img/qwback.jpg"></li>
+                                        Currently working as a business developer at Drivhuset Malmö.</h4></div></li>
                                 <p>jenny.sandberg@questway.se</p>
                             </ul>
                         </li>

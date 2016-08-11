@@ -91,7 +91,29 @@ function checkCreateEmployer(){
 }
 
 
+/**** Validering av skapandet av profil ******/
 
+function val_user_input(){
+    var checkUserInput= ['first_name', 'last_name', 'phone', 'email', 'password']
+    for(var i=0; i<checkUserInput.length; i++){
+        var myVar=document.getElementById(checkUserInput[i]).value;
+        if(myVar===null || myVar==='' || myVar==' '){
+            document.getElementById(checkUserInput[i]).style.borderColor="red";
+        }
+        else{
+            document.getElementById(checkUserInput[i]).style.borderColor="green";
+        }
+    }
+}
+
+function init(){
+    var do_account=document.getElementById('create_account');
+    try{
+        do_account.onclick=val_user_input;
+        }
+    catch (e){}
+
+}
 
 function handle_input(){
     $('.add_one_tag').click(function() {
@@ -427,3 +449,5 @@ function apply_job(){
         });
     });
 }
+
+window.onload=init;

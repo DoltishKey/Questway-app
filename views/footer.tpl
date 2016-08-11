@@ -23,7 +23,7 @@
                 </ul>
             </div>
         </div>
-
+        <!-- ***** FAQ ******
         <div class="footer_box">
             <h4>NEED HELP?</h4>
             <ul class="help_box">
@@ -32,6 +32,7 @@
                 </li>
             </ul>
         </div>
+    -->
 
         <div class="footer_box">
             <h4>WHO ARE QUESTWAY?</h4>

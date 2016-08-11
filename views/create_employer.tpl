@@ -20,7 +20,7 @@ Skriven av: Philip (HTML + CSS)
                         <label for="email">Mail</label>
                         <input placeholder="Email address" type="input" name="email" id="email" value="" required>
                         <label for="password">Password</label>
-                        <input placeholder="Password" type="input" name="password" id="password" value="" required>
+                        <input placeholder="Password" type="password" name="password" id="password" value="" required>
                         <input class="btn submit red" id="create_account" type="submit" value="Create account">
                     </form>
                     <p id="error"></p>

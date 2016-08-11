@@ -107,7 +107,7 @@ input, select {
 
 /**********Reser - END***********/
 
-/**********General rulse **********/
+/**********General rules **********/
 html{
     font-family: 'montserratregular';
     height: 100%;
@@ -319,23 +319,42 @@ footer a img{
     padding-top:25px;
 }
 
-.qw_team_profile > ul > li > h4{
-    width:100%;
-    text-align:right;
-    padding-left: 10px;
-    line-height: 1.18;
-    letter-spacing: 1.2px;
-}
-
-.qw_team_profile > ul > li > img{
+.qw_team_profile > ul > li > .bckgrd{
     width:150px;
     height:150px;
+    background: url("/static/img/qwback.jpg");
+    background-size: 150px 150px;
     border-radius: 50%;
+    margin:0 auto;
+}
+
+.qw_team_profile > ul > li > .bckgrd > h4{
+    width:140%;
+    text-align:center;
+    line-height: 1.18;
+    letter-spacing: 1.2px;
+    margin-left: -30px;
+}
+
+.qw_team_profile > ul > li > .bckgrd > h4{
+    visibility: hidden;
+}
+
+.qw_team_profile > ul > li > .bckgrd:hover > h4{
+    visibility: visible !important;
+}
+
+.qw_team_profile > ul > li > .bckgrd > h4:hover{
+    visibility: hidden;
 }
 
 .qw_team_profile > ul > li{
     width:48%;
-    float:left;
+    margin:0 auto;
+}
+
+.qw_team_profile > ul > p{
+    padding-top: 10px;
 }
 
 .qw_team_profile{
