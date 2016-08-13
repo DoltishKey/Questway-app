@@ -22,6 +22,7 @@ $(document).ready(function() {
     more_ad_opts();
     input_focus();
     apply_job();
+    validate_new_password();
 });
 
 function checkLogIn(){
@@ -426,4 +427,17 @@ function apply_job(){
             }
         });
     });
+}
+
+function validate_new_password(){
+    $('#reset_password').submit(function(event){
+        event.preventDefault(event)
+        if ($('#password_one').val() == $('#password_two').val()){
+            document.getElementById('reset_password').submit()
+        }
+        else{
+            $('#error').show()
+            $('#error').text('Passwords must match!')
+        }
+    })
 }

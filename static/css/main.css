@@ -1755,7 +1755,7 @@ hr{
     }
 
     .ads .ad .content, .new_ads .ad .content{
-        height: 120px;
+        height: 100px;
         position: relative;
     }
 
@@ -1825,8 +1825,8 @@ hr{
 
     .ads .ad .go, .new_ads .ad .go{
         right: -35px;
-        width: 80px;
-        height: 80px;
+        width: 70px;
+        height: 70px;
     }
 
     .login .container, .new_accont .container{
@@ -2085,7 +2085,7 @@ hr{
         margin: 5px 0px;
     }
 
-    input.btn.submit{
+    .edith_label_from input.btn.submit{
         width: 50%;
         line-height: 30px;
         font-size: 0.9em;

@@ -49,6 +49,17 @@ def ajax_new_user_validation(cursor):
 	else:
 		return {'result': True}
 
+def get_user_from_email(email, cursor):
+    sql = "SELECT id, autho_level, mail FROM qw_users WHERE mail = %s"
+    cursor.execute(sql, (email,))
+    mighty_db_says = cursor.fetchall()
+    if mighty_db_says:
+        return mighty_db_says[0]
+    else:
+        return False
+
+
+
 '''*********Funktions*********'''
 def add_new_user(password, user_level, email, first_name, last_name, cursor):
     '''Creates a new user based on userinput'''
@@ -157,6 +168,28 @@ def save_update_profile(cursor, user):
         update_user(user, first_name, last_name, email, phone, cursor)
         return {'result':True}
 
+def update_password(cursor, url):
+
+    print url
+    sql="SELECT qw_users.* FROM qw_reset_password JOIN \
+    qw_users ON qw_reset_password.email = qw_users.mail WHERE qw_reset_password.url = %s"
+    cursor.execute(sql, (url,))
+    mighty_db_says = cursor.fetchall()
+
+    password_one = request.forms.get('password_one')
+    password_two = request.forms.get('password_two')
+    if password_one == password_two:
+        new_password = hashlib.sha256(password_one).hexdigest()
+        sql = "UPDATE qw_users SET password = %s WHERE id = %s"
+        cursor.execute(sql,(new_password, mighty_db_says[0][0],))
+
+        sql = 'DELETE FROM qw_reset_password WHERE url = %s'
+        cursor.execute(sql,(url,))
+        
+        return {'result':True}
+
+    else:
+        return {'result':False, 'error':'Passwords must match'}
 
 '''*********Admin - Functions*********'''
 def get_all_users(cursor):

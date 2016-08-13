@@ -8,6 +8,7 @@ import bottle
 from modules import log
 from modules import handleUsers
 from modules import addmod
+from modules import mailmaster
 from bottle import route, get, post, run, template, error, static_file, request, redirect, abort, response, app
 from beaker.middleware import SessionMiddleware
 import MySQLdb
@@ -618,6 +619,77 @@ def list_applied_students():
 	else:
 		hang_up_on_database()
 		return return_error('Behörighet saknas')
+
+@route('/reset_password')
+def reset_password():
+	if log.is_user_logged_in() == True:
+		redirect('/admin')
+	else:
+		return template('reset_password.tpl', pageTitle='Reset password')
+
+
+@route('/admin_reset_password_email/<user>')
+def admin_reset_password_email(user):
+	validate_if_admin()
+	user = int(user)
+	global db
+	cursor = call_database()
+	user_info = handleUsers.get_profile_info(cursor, user)
+	mailmaster.send_new_password_email(user_info[3], user_info[0], cursor)
+	db.commit()
+	hang_up_on_database()
+	redirect('/handle_users')
+
+@route('/reset_password_email', method='POST')
+def reset_password_email():
+	global db
+	cursor = call_database()
+	email = request.forms.get('email')
+	user = handleUsers.get_user_from_email(email, cursor)
+	if user and user != False:
+		if user[1] != 2:
+			hang_up_on_database()
+			redirect('/login')
+		else:
+			mailmaster.send_new_password_email(email, user[0], cursor)
+			db.commit()
+			hang_up_on_database()
+			redirect('/login')
+	else:
+		hang_up_on_database()
+		redirect('/login')
+
+@route('/new_password/<reset_url>')
+def set_new_password(reset_url):
+	global db
+	cursor = call_database()
+	if mailmaster.validate_url(cursor, reset_url) == True:
+		hang_up_on_database()
+		return template('new_password', page_url=reset_url, pageTitle="New password")
+
+	else:
+		hang_up_on_database()
+		return return_error('Invalid link')
+
+@route('/set_new_password', method='POST')
+def set_new_password():
+	cursor = call_database()
+	global db
+	reset_url = request.forms.get('page_url')
+	if mailmaster.validate_url(cursor, reset_url) == True:
+		result = handleUsers.update_password(cursor, reset_url)
+		if result['result'] == True:
+			db.commit()
+			hang_up_on_database()
+			redirect('/login')
+		else:
+			hang_up_on_database()
+			return return_error(result['error'])
+
+	else:
+		hang_up_on_database()
+		return return_error('Invalid link')
+
 
 
 def validate_if_admin():

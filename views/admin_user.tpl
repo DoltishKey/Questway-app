@@ -20,7 +20,8 @@
                     <input type="text" id="phone" name="phone" value="{{user_info[4]}}"/><br>
                     <input type="submit" class="submit btn red" value="Spara">
                 </form>
-                <a class="remove_profile" href="/admin_delete_user/{{user_info[0]}}">Ta bort användaren</a>
+                <a class="remove_profile" href="/admin_reset_password_email/{{user_info[0]}}">Reset password</a> <br>
+                <a class="remove_profile" href="/admin_delete_user/{{user_info[0]}}">Remove user</a>
             </div>
         </main>
         %include('footer.tpl')

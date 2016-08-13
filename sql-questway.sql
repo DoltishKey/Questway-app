@@ -100,3 +100,10 @@ CONSTRAINT filter_to_filter FOREIGN KEY (filter_id) REFERENCES qw_filter (id)
 ON DELETE CASCADE,
 CONSTRAINT filter_to_application FOREIGN KEY (application_id) REFERENCES qw_application (id)
 ON DELETE CASCADE);
+
+
+CREATE TABLE qw_reset_password(
+email varchar(100),
+url varchar(100) primary key,
+request_time datetime NOT NULL
+);

@@ -355,8 +355,17 @@ def img_handeling(max_mem, img, width, heigth, user):
         buf = img.file.read(BUF_SIZE)
     data = ''.join(data_blocks)
 
+    try:
+        i=Image.open(img.file)
+        print i.format
+    except IOError:
+        return {'result':False, 'error': "Det är något fel med filen!"}
+
     name, ext = os.path.splitext(img.filename)
     if ext.lower() not in ('.png','.jpg','.jpeg', '.PNG'):
+        return {'result':False, 'error': "Filformatet stöds inte"}
+
+    if i.format.lower() not in ('png','jpg','jpeg', 'PNG'):
         return {'result':False, 'error': "Filformatet stöds inte"}
 
     save_path = "static/img/uploads/user_" + str(user)

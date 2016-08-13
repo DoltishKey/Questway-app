@@ -146,7 +146,6 @@
                                         <h3>Labels</h3>
                                         <div>
                                             <ul>
-                                                %print labels
                                                 %for label in labels:
                                                     <li>
                                                         <div class="label" data-label="{{label[0]}}" style="background-color:{{label[3]}};">

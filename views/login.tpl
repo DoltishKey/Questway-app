@@ -15,7 +15,7 @@
                     <input class="btn submit red" type="submit" id="log_in_button" value="Log in">
                     <p id="error"></p>
                 </form>
-                <p><a href="#">Forgotten password?</a></p>
+                <p><a href="/reset_password">Forgotten password?</a></p>
             </div>
         </div>
         %include('footer.tpl')
