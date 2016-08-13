@@ -314,11 +314,81 @@ footer a img{
 
 /* ABOUT PAGE */
 
+#container_of_content > .container > .about_qw_intro{
+    font-weight: 800;
+    width:90%;
+    font-size:110%;
+}
+
+#container_of_content > .container > ul{
+    width:80%;
+    margin:0 auto;
+    padding-top:15px;
+}
+
+#container_of_content > .container > ul > li{
+    font-size:120%;
+    color:#000;
+    padding-top:8px;
+}
+
+#container_of_content > .container > ul > li > img{
+    width:40%;
+}
+
 .qw_team{
     background-color:#2BCAD9;
     padding-top:25px;
 }
 
+.main_jubo > .qw_team > h1{
+    font-size:240%;
+    font-weight: 900;
+}
+
+.qw_team_profile > ul{
+    width:85%;
+    margin:0 auto;
+    padding-top:27px;
+}
+
+.qw_team_profile > ul > h2{
+    width:90%;
+    font-family: 'montserratregular', sans-serif;
+    font-size: 180%;
+    font-weight:bold;
+    margin:0 auto;
+    text-align: center;
+}
+
+.qw_team_profile > ul > p{
+    width:85%;
+    text-align: left;
+    padding:5px 0 10px 7px;
+    color:#000;
+    font-family: 'montserrathairline', sans-serif;
+    font-weight: 600;
+}
+
+.qw_team_profile > ul > li{
+    width:100%;
+    padding:5px 0 0 5px;
+}
+
+.qw_team_profile > ul > li > img{
+    width:100%;
+    height:290px;
+}
+
+.qw_team_profile > ul > li > .bckgrd > h4{
+    width:90%;
+    margin:0 auto;
+    font-family: 'montserrathairline', sans-serif;
+    font-weight: 600;
+}
+
+
+/*  Hypothetical design ABOUT-US
 .qw_team_profile > ul > li > .bckgrd{
     width:150px;
     height:150px;
@@ -335,6 +405,7 @@ footer a img{
     letter-spacing: 1.2px;
     margin-left: -30px;
 }
+
 
 .qw_team_profile > ul > li > .bckgrd > h4{
     visibility: hidden;
@@ -360,6 +431,7 @@ footer a img{
 .qw_team_profile{
     padding-bottom:35px;
 }
+ Hypothetical design - END*/
 
 /* ABOUT PAGE - END */
 
@@ -860,7 +932,10 @@ input:focus, textarea:focus {
 
 .spc_ad .about p{
     padding-top: 15px;
-    font-size: 1em;
+    font-size: 0.8em;
+    font-family: sans-serif;
+    font-weight: 200;
+    line-height:1.2;
 }
 
 .about .container{
