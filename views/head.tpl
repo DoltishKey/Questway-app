@@ -15,4 +15,5 @@ Skriven av: Alla
         <!--<link rel="stylesheet" type="text/css" href="/static/css/bootstrap/bootstrap.min.css">-->
         <script src="/static/js/jquery.js"></script>
         <script src="/static/js/main.js" type="text/javascript"></script>
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     </head>
