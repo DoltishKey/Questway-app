@@ -18,21 +18,22 @@
                             For more people to use their skills and get in touch with each other.
                             There is no business model, everything is for free- we just love doing stuff!
                         </h2>
+                        <div id="about_list">
+                            <ul>
+                                <li>1. CREATE A QUEST FOR FREE</li>
+                                <li><img src="/static/img/about_icons/kugghjul.svg"></li>
+                            </ul>
 
-                        <ul>
-                            <li>1. CREATE A QUEST FOR FREE</li>
-                            <li><img src="/static/img/about_icons/kugghjul.svg"></li>
-                        </ul>
+                            <ul>
+                                <li>2. WAIT FOR PEOPLE TO APPLY</li>
+                                <li><img src="/static/img/about_icons/gubbar.svg"></li>
+                            </ul>
 
-                        <ul>
-                            <li>2. WAIT FOR PEOPLE TO APPLY</li>
-                            <li><img src="/static/img/about_icons/gubbar.svg"></li>
-                        </ul>
-
-                        <ul>
-                            <li>3. GET IN TOUCH WITH PEOPLE</li>
-                            <li><img src="/static/img/about_icons/done.svg"></li>
-                        </ul>
+                            <ul>
+                                <li>3. GET IN TOUCH WITH PEOPLE</li>
+                                <li><img src="/static/img/about_icons/done.svg"></li>
+                            </ul>
+                        </div>
                         <a href="/create_employer" class="btn red">JOIN US</a>
                     </div>
                 </div>

@@ -318,21 +318,22 @@ footer a img{
     font-weight: 800;
     width:90%;
     font-size:110%;
+    font-family: 'montserratregular', sans-serif;
 }
 
-#container_of_content > .container > ul{
+#container_of_content > .container > #about_list > ul{
     width:80%;
     margin:0 auto;
     padding-top:15px;
 }
 
-#container_of_content > .container > ul > li{
+#container_of_content > .container > #about_list > ul > li{
     font-size:120%;
     color:#000;
     padding-top:8px;
 }
 
-#container_of_content > .container > ul > li > img{
+#container_of_content > .container > #about_list > ul > li > img{
     width:40%;
 }
 
@@ -383,7 +384,7 @@ footer a img{
 .qw_team_profile > ul > li > .bckgrd > h4{
     width:90%;
     margin:0 auto;
-    font-family: 'montserrathairline', sans-serif;
+    font-family: 'montserratregular', sans-serif;
     font-weight: 600;
 }
 
@@ -405,7 +406,6 @@ footer a img{
     letter-spacing: 1.2px;
     margin-left: -30px;
 }
-
 
 .qw_team_profile > ul > li > .bckgrd > h4{
     visibility: hidden;
@@ -970,6 +970,10 @@ hr{
 
 #more_members{
     margin-bottom: 15px;
+}
+
+#more_members:hover{
+    cursor:pointer;
 }
 
 .btn.submit.red{
@@ -2312,6 +2316,81 @@ hr{
 
     }
 
+    /* MQ-About page */
+
+    #container_of_content > .container > .about_qw_intro{
+        font-size:210%;
+    }
+
+    .main_jubo > #container_of_content > .container > .about_questway{
+        font-size:400%;
+    }
+
+    #container_of_content > .container > #about_list{
+        width:80%;
+        margin:0 auto;
+    }
+
+    #container_of_content > .container > #about_list > ul{
+        width:75%;
+        overflow: hidden;
+        padding-top: 40px;
+    }
+
+    #container_of_content > .container > #about_list > ul > li{
+        float:right;
+        font-size: 200%;
+    }
+
+    #container_of_content > .container > #about_list > ul > li:nth-child(1){
+        width:80%;
+        text-align: left;
+        padding-top:5.5%;
+    }
+
+    #container_of_content > .container > #about_list > ul > li > img{
+        width:80%;
+    }
+
+    .main_jubo > .qw_team > h1{
+        font-size:410%;
+    }
+
+    .qw_team_profile{
+        width:30%;
+        display: inline-block;
+        padding-bottom:30px;
+        text-align: left;
+    }
+
+    .qw_team_profile > ul > h2{
+        width:100%;
+        margin:0;
+        text-align: left;
+        letter-spacing: 2px;
+    }
+
+    .qw_team_profile > ul > p{
+        width:85%;
+        text-align: left;
+        padding:0;
+    }
+
+    .qw_team_profile > ul > li{
+        width:100%;
+        padding:7px 0 7px 0px;
+    }
+
+    .qw_team_profile > ul > li > .bckgrd > h4{
+        width:100%;
+        margin:0;
+        line-height: 110%;
+    }
+
+    /*MQ - about page END */
+
+
+    /*MQ -  FOOTER - Starts */
     .footer_box > ul{
         padding-left:0;
     }
@@ -2344,4 +2423,6 @@ hr{
         width:45%;
         padding-left:121px;
     }
+
+    /* MQ - Footer - ENDS */
 }
