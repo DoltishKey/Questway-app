@@ -107,13 +107,32 @@ function val_user_input(){
     }
 }
 
+function val_application_input(){
+    var checkApplicationInput= ['name', 'phone', 'email']
+    for(var i=0; i<checkApplicationInput.length; i++){
+        var myVar=document.getElementById(checkApplicationInput[i]).value;
+        if(myVar===null || myVar==='' || myVar==' '){
+            document.getElementById(checkApplicationInput[i]).style.borderColor="red";
+        }
+        else{
+            document.getElementById(checkApplicationInput[i]).style.borderColor="green";
+        }
+    }
+}
+
+
 function init(){
     var do_account=document.getElementById('create_account');
+    var do_application=document.getElementById('create_application');
     try{
         do_account.onclick=val_user_input;
         }
     catch (e){}
 
+    try{
+        do_application.onclick=val_application_input;
+        }
+    catch (e){}
 }
 
 function handle_input(){
@@ -322,6 +341,7 @@ function new_user(){
         $('.shadow').show()
         $('body').addClass('fixed')
         var pos_top = $(window).scrollTop();
+        close_new_user() /* Denna är tillagd av Jari för att få stäng-knapp att funka på overlay */
         $('.shadow').scrollTop($('.shadow').scrollTop() - $('.shadow').offset().top);
         close_new_user()
     })
@@ -334,7 +354,7 @@ function new_user(){
 }
 
 function close_new_user(pos_top){
-    $('.close, .shadow').click(function(){
+    $('.close_icon, .shadow').click(function(){
         $('.overlay').hide()
         $('.shadow').hide()
         $('body').removeClass('fixed')
@@ -422,6 +442,8 @@ function input_focus(){
         label.css('border', '4px solid  #fff')
     })
 }
+
+
 
 
 function apply_job(){
