@@ -1916,7 +1916,7 @@ hr{
     background-color: #2bcad9;
 }
 
-#wrapping_edit > h2, h4{
+#wrapping_edit > h2, #wrapping_edit > form > h4{
     font-size: 200%;
     padding:15px;
     text-align: center;
