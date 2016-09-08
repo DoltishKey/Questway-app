@@ -60,6 +60,7 @@ function checkCreateEmployer(){
     ****************/
     $('#create_user').submit(function(event){
         event.preventDefault(event);
+        set_accept_cookie()
         var email = document.getElementById("email");
         if (/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(email.value))
         {
@@ -84,7 +85,7 @@ function checkCreateEmployer(){
         });
         }
         else{
-            alert("Du måste ange en hel och riktig mailadress. Med @ och allt.");
+
             email.style.borderColor = "red"
             return false
         }
@@ -427,6 +428,7 @@ function input_focus(){
 function apply_job(){
     $('#apply_in_job').submit(function(event){
         event.preventDefault(event);
+        set_accept_cookie()
         ad_nr = application_nr = $(this).data('ad-id')
         this_form = $(this)
         $.ajax({
@@ -435,20 +437,29 @@ function apply_job(){
             data: $(this).serialize(),
             success: function(response) {
                 this_form.hide()
-                $('.message').show()
+                $('.application_message').show()
                 if (response == 'ok'){
-                    $('.message').addClass('success')
-                    $('.message').find('h3').text('Yey!')
-                    $('.message').find('p').text('Your application has been sent!')
+                    $('.application_message').addClass('success')
+                    $('.application_message').find('h3').text('Yey!')
+                    $('.application_message').find('p').text('Your application has been sent!')
                 }
                 else{
-                    $('.message').addClass('error')
-                    $('.message').find('h3').text('Aww!')
-                    $('.message').find('p').text('Something went wrong!')
+                    $('.application_message').addClass('error')
+                    $('.application_message').find('h3').text('Aww!')
+                    $('.application_message').find('p').text('Something went wrong!')
                 }
             }
         });
     });
+}
+
+function set_accept_cookie(){
+    if (document.cookie.indexOf('accepting_cookies_from_questway')== -1 ){
+        var d = new Date();
+        d.setTime(d.getTime() + (365*24*60*60*1000));
+        var expires = "expires="+ d.toUTCString();
+        document.cookie = 'accepting_cookies_from_questway' + "=" + true + "; " + expires;
+    }
 }
 
 function validate_new_password(){

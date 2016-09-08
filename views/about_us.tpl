@@ -2,7 +2,6 @@
 <html>
  %include('head.tpl')
     <body>
-        <main>
             %if user_autho == 1:
                 % include('nav_students.tpl')
             %elif user_autho == 2:
@@ -10,6 +9,7 @@
             %else:
                 % include('nav.tpl')
             %end
+            <main>
             <div class="main_jubo">
                 <div id="container_of_content">
                     <div class="container">
@@ -26,7 +26,9 @@
                         <a href="/create_employer" class="btn red">JOIN US</a>
                     </div>
                 </div>
-                <div class="qw_team">
+            </div>
+            <div class="qw_team">
+                <div class="container">
                     <h1>TEAM</h1>
                     <ul>
                         <li class="qw_team_profile">

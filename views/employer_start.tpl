@@ -37,58 +37,68 @@
                     <div class="btn red">Create new ad +</div>
                 </div>
             </div>
-            <div class="new_ad_form overlay">
-                <div class="close close_icon"></div>
-                <hr>
-                <div class="container">
-                    <h2>Ny annons</h2>
-                    <form action="/post_job" method="post" id="new_ad" enctype="multipart/form-data">
-                        <h6>Om er</h6>
-                        <div class="logo_upload" style="background-image:url(../{{user_info[7]}}); background-repeat: no-repeat;">
-                            <label for="img_logo">Ladda upp er logga</label>
-                            <input type="file" name="img_logo" id="img_logo"><br>
-                        </div>
+            <div class="shadow">
+                <div class="new_ad_form overlay">
+                    <div class="close close_icon"></div>
+                    <hr>
+                    <div class="container">
+                        <h2>New ad</h2>
+                        <form action="/post_job" method="post" id="new_ad" enctype="multipart/form-data">
+                            <div class="new_ad_about_comp">
+                                <div class="img_cover" style="background-image:url(../{{user_info[8]}});">
+                                    %if user_info[8]:
+                                        <label for="img_cover" >Change cover photo</label>
+                                    %else:
+                                        <label for="img_cover" >Upload cover photo</label>
+                                    %end
+                                    <input type="file" name="img_cover" id="img_cover"><br>
+                                </div>
+                                <div class="logo_upload" style="background-image:url(../{{user_info[7]}}); background-repeat: no-repeat;">
+                                    %if user_info[7]:
+                                        <label for="img_logo" id="img_logo_label">Change logo</label>
+                                    %else:
+                                        <label for="img_logo" id="img_logo_label">Upload logo</label>
+                                    %end
+                                    <input type="file" name="img_logo" id="img_logo"><br>
+                                </div>
 
-                        <div class="img_cover" style="background-image:url(../{{user_info[8]}});">
-                            %if user_info[8]:
-                                <label for="img_cover" >Change cover photo</label>
-                            %else:
-                                <label for="img_cover" >Upload cover photo</label>
-                            %end
-                            <input type="file" name="img_cover" id="img_cover"><br>
-                        </div>
+                                <h6>About the company</h6>
+                                <label for="company_name">Company name</label>
+                                <input type="text" id="company_name" name="company_name" value="{{user_info[6]}}"/><br>
 
-                        <lable for="company_name">Företagsnamn</lable>
-                        <input type="text" id="company_name" name="company_name" value="{{user_info[6]}}"/><br>
+                                <label for="about_company">About the company</label>
+                                <textarea type="text" id="about_company" name="about_company"/>{{user_info[9]}}</textarea><br>
 
-                        <lable for="about_company">Om ert företag</lable>
-                        <textarea type="text" id="about_company" name="about_company"/>{{user_info[9]}}</textarea><br>
+                                <label for="company_link">Link to website</label>
+                                <input type="text" id="company_link" name="company_link" value="{{user_info[5]}}"/><br>
+                            </div>
+                            <div class="new_ad_about_job">
+                                <h6>About the job</h6>
+                                <label for="ad_title">Ad title</label>
+                                <input type="text" id="ad_title" name="ad_title"/><br>
 
-                        <lable for="company_link">Länk till hemsida</lable>
-                        <input type="text" id="company_link" name="company_link" value="{{user_info[5]}}"/><br>
+                                <label for="about_job">About the job</label>
+                                <textarea type="text" id="about_job" name="about_job"/></textarea><br>
+                            </div>
 
-                        <h6>Om jobbet</h6>
-                        <lable for="ad_title">Annons titel</lable>
-                        <input type="text" id="ad_title" name="ad_title"/><br>
+                                <label for="ad_type" class="red_label">Type</label>
+                                <div class="select_dropdown">
+                                    <select id="ad_type" name="ad_type">
+                                        %for type in job_types:
+                                            <option value="{{type[0]}}">{{type[1]}</option>
+                                        %end
+                                    </select>
+                                </div>
+                                <div class="tag_continer">
+                                    <label class=" red_label">Tags</label>
+                                    <ul class="keys">
 
-                        <lable for="about_job">Om jobbet</lable>
-                        <textarea type="text" id="about_job" name="about_job"/></textarea><br>
-
-                        <label for="ad_type">Jobbkategori</label>
-                        <select id="ad_type" name="ad_type">
-                            %for type in job_types:
-                            <option value="{{type[0]}}">{{type[1]}}</option>
-                            %end
-                        </select><br>
-                        <div class="tag_continer">
-                            <label class="add_one_tag">Taggar</label>
-                            <ul class="keys">
-
-                            </ul>
-                            <p class="add_one_tag">Lägg till +</p>
-                        </div>
-                        <input type="submit" id="ad_button" value="Lägg upp">
-                    </form>
+                                    </ul>
+                                    <p class="add_one_tag">Ad +</p>
+                                </div>
+                                <input type="submit" class="submit btn red" id="ad_button" value="Lägg upp">
+                        </form>
+                    </div>
                 </div>
             </div>
         </main>

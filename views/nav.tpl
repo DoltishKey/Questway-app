@@ -1,3 +1,25 @@
+<script>
+    $(document).ready(function() {
+        if (document.cookie.indexOf('accepting_cookies_from_questway')== -1 ){
+            $('.cookie_message').show()
+            $('.accept_cookie').click(function(){
+                var d = new Date();
+                d.setTime(d.getTime() + (365*24*60*60*1000));
+                var expires = "expires="+ d.toUTCString();
+                document.cookie = 'accepting_cookies_from_questway' + "=" + true + "; " + expires;
+                $('.cookie_message').slideUp(800)
+            })
+        }
+        else{
+            $('.cookie_message').hide()
+        }
+    });
+</script>
+<div class="cookie_message container">
+    <h4>Cookies</h4>
+    <p>By using this site you accept our terms of service and our use of cookies. You can read more about it <a href="#">here.</a></p>
+    <div class="btn accept_cookie">Ok, I got it</div>
+</div>
 <header>
     <div class="container" style="padding:0px;">
     <div class="logo_container">
