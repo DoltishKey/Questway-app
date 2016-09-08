@@ -89,7 +89,7 @@
                             <div class="select_dropdown">
                                 <select id="ad_type" name="ad_type">
                                     %for type in job_types:
-                                        <option value="{{type[0]}}">{{type[1]}</option>
+                                        <option value="{{type[0]}}">{{type[1]}}</option>
                                     %end
                                 </select>
                             </div>

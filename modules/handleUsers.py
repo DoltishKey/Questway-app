@@ -117,6 +117,12 @@ def create_new_user(cursor):
         if user_input == None or len(user_input) == 0:
             return {'result':False, 'error': 'Inget fält får vara tomt!'}
 
+    if len(phone) < 10:
+        return {'result':False, 'error':'Phonenumber is to short!'}
+
+    if len(password) < 5:
+        return {'result':False, 'error':'Password is to short!'}
+
     if validate_Username(email, cursor) == True:
         return {'result':False, 'error':'Tyvärr - en användare med samma email finns redan!'}
 
@@ -149,6 +155,9 @@ def save_update_profile(cursor, user):
     elif validate_email.validate_email(email) == False:
         return {'result':False, 'error':'Du måste ange en riktig email!'}
 
+    if len(password) < 5:
+        return {'result':False, 'error':'Password is too short. '}
+
     if current_password or new_password_one or new_password_two:
         update_password = [current_password,new_password_one,email, new_password_two]
         for password in update_password:
@@ -170,7 +179,9 @@ def save_update_profile(cursor, user):
 
 def update_password(cursor, url):
 
-    print url
+    if len(password) < 5:
+        return {'result':False, 'error':'Password is to short!'}
+
     sql="SELECT qw_users.* FROM qw_reset_password JOIN \
     qw_users ON qw_reset_password.email = qw_users.mail WHERE qw_reset_password.url = %s"
     cursor.execute(sql, (url,))
@@ -185,7 +196,7 @@ def update_password(cursor, url):
 
         sql = 'DELETE FROM qw_reset_password WHERE url = %s'
         cursor.execute(sql,(url,))
-        
+
         return {'result':True}
 
     else:

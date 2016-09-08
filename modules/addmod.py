@@ -246,6 +246,9 @@ def apply(cursor, job_nr):
         if validate_email.validate_email(email) == False:
             return {'result':False, 'error':'Du måste ange en riktig email!'}
 
+        if len(phone) < 8:
+            return {'result':False, 'error':'Phonenumber is too short!'}    
+
         #Validates applicants
         additional_names = request.POST.getall('additional_name')
         additional_phones = request.POST.getall('additional_phone')

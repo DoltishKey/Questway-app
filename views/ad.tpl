@@ -56,15 +56,13 @@
             <div class="about application">
                 <div class="container">
                     <h3>Application</h3>
-                    <!-- Keep or not to keep?!
-                    <div class="message">
+                    <div class="application_message">
                         <h3></h3>
                         <p></p>
 
                         <a href="/" class="btn submit red">Back to all ads</a>
 
                     </div>
-                    -->
                     <form data-ad-id="{{ad_info[0]}}" id="apply_in_job">
                         <h4>Team members</h4>
                         <div>
