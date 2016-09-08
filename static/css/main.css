@@ -314,6 +314,29 @@ footer a img{
 
 /* ABOUT PAGE */
 
+#container_of_content > .container > .about_qw_intro{
+    font-weight: 800;
+    width:90%;
+    font-size:110%;
+    font-family: 'montserratregular', sans-serif;
+}
+
+#container_of_content > .container > #about_list > ul{
+    width:80%;
+    margin:0 auto;
+    padding-top:15px;
+}
+
+#container_of_content > .container > #about_list > ul > li{
+    font-size:120%;
+    color:#000;
+    padding-top:8px;
+}
+
+#container_of_content > .container > #about_list > ul > li > img{
+    width:40%;
+}
+
 .qw_team{
     background-color:#2BCAD9;
     padding-top:25px;
@@ -321,6 +344,54 @@ footer a img{
     text-align: center;
 }
 
+.main_jubo > .qw_team > h1{
+    font-size:240%;
+    font-weight: 900;
+}
+
+.qw_team_profile > ul{
+    width:85%;
+    margin:0 auto;
+    padding-top:27px;
+}
+
+.qw_team_profile > ul > h2{
+    width:90%;
+    font-family: 'montserratregular', sans-serif;
+    font-size: 180%;
+    font-weight:bold;
+    margin:0 auto;
+    text-align: center;
+}
+
+.qw_team_profile > ul > p{
+    width:85%;
+    text-align: left;
+    padding:5px 0 10px 7px;
+    color:#000;
+    font-family: 'montserrathairline', sans-serif;
+    font-weight: 600;
+}
+
+.qw_team_profile > ul > li{
+    width:100%;
+    padding:5px 0 0 5px;
+}
+
+.qw_team_profile > ul > li > img{
+    width:100%;
+    height:290px;
+}
+
+.qw_team_profile > ul > li > .bckgrd > h4{
+    width:90%;
+    margin:0 auto;
+    font-family: 'montserratregular', sans-serif;
+    font-weight: 600;
+}
+
+
+/*  Hypothetical design ABOUT-US
 .qw_team_profile > ul > li > .bckgrd{
     width:150px;
     height:150px;
@@ -362,6 +433,7 @@ footer a img{
 .qw_team_profile{
     padding-bottom:35px;
 }
+ Hypothetical design - END*/
 
 /* ABOUT PAGE - END */
 
@@ -860,9 +932,9 @@ input:focus, textarea:focus {
 }
 
 .spc_ad .about.company{
-    clear: both;
     color:#fff;
     background-color: #E74B4E;
+    width:100%;
 }
 
 .spc_ad .about h3{
@@ -872,7 +944,16 @@ input:focus, textarea:focus {
 
 .spc_ad .about p{
     padding-top: 15px;
-    font-size: 1em;
+    font-size: 1.1em;
+    font-family: sans-serif;
+    font-weight: 200;
+    line-height:1.3;
+    word-wrap: break-word;
+
+}
+
+.job p{
+    line-height: 1.2em;
 }
 
 .about .container{
@@ -907,6 +988,10 @@ hr{
 
 #more_members{
     margin-bottom: 15px;
+}
+
+#more_members:hover{
+    cursor:pointer;
 }
 
 .btn.submit.red{
@@ -1857,6 +1942,49 @@ hr{
     margin: 5px auto;
 }
 
+.container > #new_ad > #company_name{
+    margin-top:5px;
+}
+
+#wrapping_edit{
+    background-color: #2bcad9;
+}
+
+#wrapping_edit > h2, #wrapping_edit > form > h4{
+    font-size: 200%;
+    padding:15px;
+    text-align: center;
+}
+
+#wrapping_edit > a{
+    text-decoration: none;
+    color:#fff;
+    background-color:#272E3F;
+    position:relative;
+    bottom:10px;
+    left:10px;
+    padding:5px;
+    border:2px #fff solid;
+    border-radius: 50px;
+    font-size: 1em;
+    font-family: 'montserratregular';
+}
+
+#wrapping_edit > form{
+    padding:10px;
+}
+
+#wrapping_edit > form > #save_info{
+    background-color: #E74B4E;
+}
+
+#wrapping_edit > form > #save_info:hover{
+    background-color: #B42F35;
+    color:#fff;
+}
+
+/* Ad-presentation START */
+
 
 
 @media screen and (min-width:960px){
@@ -2271,6 +2399,81 @@ hr{
 
     }
 
+    /* MQ-About page */
+
+    #container_of_content > .container > .about_qw_intro{
+        font-size:210%;
+    }
+
+    .main_jubo > #container_of_content > .container > .about_questway{
+        font-size:400%;
+    }
+
+    #container_of_content > .container > #about_list{
+        width:80%;
+        margin:0 auto;
+    }
+
+    #container_of_content > .container > #about_list > ul{
+        width:75%;
+        overflow: hidden;
+        padding-top: 40px;
+    }
+
+    #container_of_content > .container > #about_list > ul > li{
+        float:right;
+        font-size: 200%;
+    }
+
+    #container_of_content > .container > #about_list > ul > li:nth-child(1){
+        width:80%;
+        text-align: left;
+        padding-top:5.5%;
+    }
+
+    #container_of_content > .container > #about_list > ul > li > img{
+        width:80%;
+    }
+
+    .main_jubo > .qw_team > h1{
+        font-size:410%;
+    }
+
+    .qw_team_profile{
+        width:30%;
+        display: inline-block;
+        padding-bottom:30px;
+        text-align: left;
+    }
+
+    .qw_team_profile > ul > h2{
+        width:100%;
+        margin:0;
+        text-align: left;
+        letter-spacing: 2px;
+    }
+
+    .qw_team_profile > ul > p{
+        width:85%;
+        text-align: left;
+        padding:0;
+    }
+
+    .qw_team_profile > ul > li{
+        width:100%;
+        padding:7px 0 7px 0px;
+    }
+
+    .qw_team_profile > ul > li > .bckgrd > h4{
+        width:100%;
+        margin:0;
+        line-height: 110%;
+    }
+
+    /*MQ - about page END */
+
+
+    /*MQ -  FOOTER - Starts */
     .footer_box > ul{
         padding-left:0;
     }
@@ -2302,5 +2505,64 @@ hr{
     #logo_img_container{
         width:45%;
         padding-left:121px;
+    }
+
+    /* MQ - Footer - ENDS */
+
+
+
+
+    /* MQ - edit_profile START */
+
+    #wrapping_edit > form > input{
+        width:50%;
+        margin:0 auto;
+        }
+    #wrapping_edit > form > label{
+        display:block;
+        width:50%;
+        margin:0 auto;
+        padding-bottom:3px;
+    }
+
+    #wrapping_edit > h2, #wrapping_edit > form > h4{
+        font-size: 200%;
+        padding:15px;
+        text-align: center;
+    }
+
+    #wrapping_edit > a{
+        text-decoration: none;
+        color:#fff;
+        background-color:#272E3F;
+        position:relative;
+        bottom:10px;
+        left:10px;
+        padding:5px;
+        border:2px #fff solid;
+        border-radius: 50px;
+        font-size: 1em;
+        font-family: 'montserratregular';
+    }
+
+    #wrapping_edit > form{
+        padding:10px;
+    }
+
+    #wrapping_edit > form > #save_info{
+        background-color: #E74B4E;
+    }
+
+    #wrapping_edit > form > #save_info:hover{
+        background-color: #B42F35;
+        color:#fff;
+    }
+
+    #wrapping_edit > form > #red_bord{
+        border-color:red;
+    }
+
+    #wrapping_edit > form > #green_bord{
+        border-color:green;
     }
 }

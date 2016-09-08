@@ -93,14 +93,29 @@ function checkCreateEmployer(){
 }
 
 
-/**** Validering av skapandet av profil ******/
+/* ALL VALIDERING KAN FÖRBÄTTRAS FÖR BÄTTRE UX
 
+/**** Validering av skapandet av profil ******/
+/* Fixa att bara 1x felmeddelande dyker upp (inte ett nytt för varje fel). Meddela användaren mer
+precist vad för typ av fel som uppstod */
 function val_user_input(){
     var checkUserInput= ['first_name', 'last_name', 'phone', 'email', 'password']
     for(var i=0; i<checkUserInput.length; i++){
         var myVar=document.getElementById(checkUserInput[i]).value;
-        if(myVar===null || myVar==='' || myVar==' '){
+        if(myVar===null || myVar==='' || myVar===' '){
             document.getElementById(checkUserInput[i]).style.borderColor="red";
+            window.alert('Something went wrong. Check that you applied the correct information');
+        }
+        else if(i===2){
+            if(/\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(myVar)){
+                document.getElementById(checkUserInput[i]).style.borderColor="green";
+                return true;
+            }
+            else{
+                document.getElementById(checkProfileInput[i]).style.borderColor="red";
+                alert('The given email is not valid');
+                return false;
+            }
         }
         else{
             document.getElementById(checkUserInput[i]).style.borderColor="green";
@@ -108,13 +123,83 @@ function val_user_input(){
     }
 }
 
+/*****Validate user input during application ******/
+/* Fixa att bara 1x felmeddelande dyker upp (inte ett nytt för varje fel). Meddela användaren mer
+precist vad för typ av fel som uppstod */
+function val_application_input(){
+    var checkApplicationInput= ['name', 'phone', 'email']
+    for(var i=0; i<checkApplicationInput.length; i++){
+        var myVar=document.getElementById(checkApplicationInput[i]).value;
+        myVar=myVar.trim();
+        if(myVar===null || myVar==='' || myVar===' '){
+            document.getElementById(checkApplicationInput[i]).style.borderColor="red";
+            window.alert('Something went wrong. Check that you applied the correct information');
+        }
+        else if(i===2){
+            if(/\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(myVar)){
+                document.getElementById(checkUserInput[i]).style.borderColor="green";
+                return true;
+            }
+            else{
+                document.getElementById(checkProfileInput[i]).style.borderColor="red";
+                alert('The given email is not valid');
+                return false;
+            }
+        }
+        else{
+            document.getElementById(checkApplicationInput[i]).style.borderColor="green";
+        }
+    }
+}
+
+/****** Validate user-input information while editing profile ********/
+/* Fixa att bara 1x felmeddelande dyker upp (inte ett nytt för varje fel). Meddela användaren mer
+precist vad för typ av fel som uppstod */
+function val_profile_info(){
+    var checkProfileInput= ['firstname', 'lastname', 'email']
+    for(var i=0; i<checkProfileInput.length; i++){
+        var theVar=document.getElementById(checkProfileInput[i]).value;
+        theVar=theVar.trim();
+        if(theVar===null || theVar==='' || theVar===' '){
+            document.getElementById(checkProfileInput[i]).style.borderColor="red";
+            alert('Something went wrong. Check that you applied the correct information');
+        }
+        else if(i===2){
+            if(/\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(theVar)){
+                document.getElementById(checkProfileInput[i]).style.borderColor="green";
+                return true;
+            }
+            else{
+                document.getElementById(checkProfileInput[i]).style.borderColor="red";
+                alert('The given email is not valid');
+                return false;
+            }
+        }
+        else{
+            document.getElementById(checkProfileInput[i]).style.borderColor="green";
+        }
+    }
+}
+
+
 function init(){
     var do_account=document.getElementById('create_account');
+    var do_application=document.getElementById('create_application');
+    var do_edith_profile=document.getElementById('save_info');
     try{
         do_account.onclick=val_user_input;
         }
     catch (e){}
 
+    try{
+        do_application.onclick=val_application_input;
+        }
+    catch (e){}
+
+    try{
+        do_edith_profile.onclick=val_profile_info;
+        }
+    catch (e){}
 }
 
 function handle_input(){
@@ -323,6 +408,7 @@ function new_user(){
         $('.shadow').show()
         $('body').addClass('fixed')
         var pos_top = $(window).scrollTop();
+        close_new_user() /* Denna är tillagd av Jari för att få stäng-knapp att funka på overlay */
         $('.shadow').scrollTop($('.shadow').scrollTop() - $('.shadow').offset().top);
         close_new_user()
     })
@@ -335,7 +421,7 @@ function new_user(){
 }
 
 function close_new_user(pos_top){
-    $('.close, .shadow').click(function(){
+    $('.close_icon, .shadow').click(function(){
         $('.overlay').hide()
         $('.shadow').hide()
         $('body').removeClass('fixed')
@@ -423,6 +509,8 @@ function input_focus(){
         label.css('border', '4px solid  #fff')
     })
 }
+
+
 
 
 function apply_job(){

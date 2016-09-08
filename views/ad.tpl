@@ -37,9 +37,12 @@
             %if ad_info[11] or ad_info[7]:
                 <div class="about company">
                     <div class="container">
-                        <h3>{{ad_info[8]}}</h3>
+                        <h3> About {{ad_info[8]}}</h3>
                         <p>{{ad_info[11]}}</p>
-                        <p>{{ad_info[7]}}</p>
+                    %if ad_info[7]:
+                        <h3> Company website: </h3>
+                        <a href="{{ad_info[7]}}">{{ad_info[7]}}</a>
+                    %end
                     </div>
                 </div>
             %end
@@ -64,11 +67,11 @@
                         <h4>Team members</h4>
                         <div>
                             <label for="name">Name</label>
-                            <input type="text" name="name" id="name"><br>
+                            <input type="text" name="name" id="name" required><br>
                             <label for="phone">Phone</label>
-                            <input type="text" name="phone" id="phone"><br>
+                            <input type="text" name="phone" id="phone" required><br>
                             <label for="email">Mail</label>
-                            <input type="text" name="email" id="email"><br>
+                            <input type="text" name="email" id="email" required><br>
                         </div>
                         <hr>
                         <div id="group_application"></div>
@@ -76,7 +79,7 @@
                         <label for="message">Message</label>
                         <textarea name="message" id="message" maxlength="500"></textarea><br>
                         <p id="form_counter">( 500 )</p>
-                        <input class="btn submit red" type="submit" value="Skicka">
+                        <input class="btn submit red" type="submit" value="Skicka" id="create_application">
                     </form>
                 </div>
             </div>
