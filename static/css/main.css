@@ -1092,6 +1092,11 @@ hr{
     background-color: #B42F35;
 }
 
+.make_green{
+    background-image:none;
+    background-color:green;
+}
+
 
 .user_icon{
     display: inline-block;
