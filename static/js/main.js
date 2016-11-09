@@ -162,7 +162,7 @@ function val_profile_info(){
         theVar=theVar.trim();
         if(theVar===null || theVar==='' || theVar===' '){
             document.getElementById(checkProfileInput[i]).style.borderColor="red";
-            alert('Something went wrong. Check that you applied the correct information');
+            alert('Someth   ing went wrong. Check that you applied the correct information');
         }
         else if(i===2){
             if(/\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(theVar)){
@@ -186,6 +186,11 @@ function init(){
     var do_account=document.getElementById('create_account');
     var do_application=document.getElementById('create_application');
     var do_edith_profile=document.getElementById('save_info');
+    WriteCookie();
+    ReadCookie();
+
+    /*delete_cookie();*/
+
     try{
         do_account.onclick=val_user_input;
         }
@@ -201,6 +206,60 @@ function init(){
         }
     catch (e){}
 }
+
+function ReadCookie()
+            {
+               var allcookies = document.cookie;
+               console.log("All Cookies : " + allcookies );
+
+               // Get all the cookies pairs in an array
+               cookiearray = allcookies.split(';');
+
+               // Now take key value pair out of this array
+               for(var i=0; i<cookiearray.length; i++){
+                  name = cookiearray[i].split('=')[0];
+                  value = cookiearray[i].split('=')[1];
+                  console.log("Key is : " + name + " and Value is : " + value);
+               }
+            }
+
+
+/* fixa att det är ID som hämtas */
+function WriteCookie()
+    {
+        var now = new Date();
+        now.setMonth( now.getMonth() + 1 );
+        var nr1=1
+        var nr2=0
+        cookievalue=JSON.stringify([nr1, nr2]);
+        ColorSwitch(cookievalue);
+
+        document.cookie="ad_applied_on=" + cookievalue;
+        document.cookie = "expires=" + now.toUTCString() + ";"
+        console.log("Setting Cookies : " + "name=" + cookievalue );
+    }
+
+function ColorSwitch(cookievalue){
+    var cookies_parsed=JSON.parse(cookievalue);
+    var cs_what=document.getElementsByClassName("flexer_parent");
+
+    for(var i=0; i<cookies_parsed.length; i++){
+        console.log(cookies_parsed[i]);
+        for(var j=0; j < cs_what.length; j++){
+            var myvar=document.getElementsByClassName("flexer_parent")[j].getAttribute("href");
+            var stiped_var=myvar.split("/");
+            if (JSON.parse(stiped_var[2])==cookies_parsed[i]){
+                var hej=document.getElementsByClassName("go")[j];
+                hej.className += hej.className ? ' make_green' : 'make_green';
+            }
+        }
+    }
+}
+
+/* Delete unecessary cookies */
+function delete_cookie(name) {
+    document.cookie = name + '=; expires=Thu, 01 Jan 1970 00:00:01 GMT;';
+            }
 
 function handle_input(){
     $('.add_one_tag').click(function() {

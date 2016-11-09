@@ -200,9 +200,6 @@ def edith_profile():
 		update = handleUsers.save_update_profile(cursor, user)
 		db.commit()
 		hang_up_on_database()
-		print user_info
-		print "hej"
-		print update
 		if update['result'] == True:
 			redirect('/edith_profile')
 		else:
