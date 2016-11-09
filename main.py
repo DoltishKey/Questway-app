@@ -11,6 +11,7 @@ from modules import addmod
 from modules import mailmaster
 from bottle import route, get, post, run, template, error, static_file, request, redirect, abort, response, app
 from beaker.middleware import SessionMiddleware
+#import pymysql
 import MySQLdb
 
 db = None
@@ -49,7 +50,6 @@ def startPage():
 @route('/login')
 def login():
 	if log.is_user_logged_in() == True:
-		SessionMiddleware(app(), log.session_opts)
 		redirect('/admin')
 	else:
 		return template('login', pageTitle='Logga in')
@@ -737,12 +737,17 @@ def server_static(filename):
     return static_file(filename, root="static")
 
 
+
+
 app = SessionMiddleware(app(), log.session_opts)
 #run(host= '0.0.0.0', port=8080 , app=app)
 
+
+
 # Run bottle internal test server when invoked directly ie: non-uxsgi mode
 if __name__ == '__main__':
-    bottle.run(host='0.0.0.0', port=8080)
+    run(host='0.0.0.0', port=8080, app=app)
 # Run bottle in application mode. Required in order to get the application working with uWSGI!
 else:
-    app = application = bottle.default_app()
+    #app = application = bottle.default_app()
+	app = application= SessionMiddleware(bottle.default_app(), log.session_opts)
