@@ -36,19 +36,19 @@
                     <div class="container">
                         <h2>Create new user</h2>
                         <form action="/do_create_user" method="post">
-                            <label for="firstname">Förnamn</label>
+                            <label for="firstname">Firstname</label>
                             <input id="firstname" name="first_name" type="text">
                             <br>
-                            <label for="lastname">Efternamn</label>
+                            <label for="lastname">Lastname</label>
                             <input id="lastname" name="last_name" type="text">
                             <br>
-                            <label for="phone">Tele</label>
+                            <label for="phone">Phone</label>
                             <input id="phone" name="phone" type="text">
                             <br>
                             <label for="mail">Mail</label>
                             <input id="mail" name="email" type="text">
                             <br>
-                            <label for="password">Lösenord</label>
+                            <label for="password">Password</label>
                             <input id="password" name="password" type="text">
                             <br>
                             <input class="btn submit red" type="submit" value="Create">

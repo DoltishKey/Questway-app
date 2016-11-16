@@ -48,7 +48,7 @@
             %end
             <div class="about job">
                 <div class="container">
-                    <h3>{{ad_info[3]}}</h3>
+                    <h3>About {{ad_info[3]}}</h3>
                     <p>{{ad_info[4]}}</p>
                 </div>
             </div>
@@ -79,7 +79,7 @@
                         <label for="message">Message</label>
                         <textarea name="message" id="message" maxlength="500"></textarea>
                         <p id="form_counter">( 500 )</p>
-                        <input class="btn submit red" type="submit" value="Skicka" id="create_application">
+                        <input class="btn submit red" type="submit" value="Send" id="create_application">
                     </form>
                 </div>
             </div>

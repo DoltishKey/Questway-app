@@ -652,6 +652,7 @@ input:focus, textarea:focus {
     margin: 10px auto;
     font-family: 'montserrathairline';
     line-height: 1.2em;
+    margin-bottom: 30px;
 }
 
 .main_jubo .btn{
@@ -2866,12 +2867,14 @@ hr{
         font-size: 200%;
         padding:15px;
         text-align: center;
+        color: #fff;
+        font-size: 1.2em;
     }
 
     #wrapping_edit > a{
         text-decoration: none;
         color:#fff;
-        background-color:#272E3F;
+        background-color:#E74B4E;
         position:relative;
         bottom:10px;
         left:10px;
@@ -2888,11 +2891,13 @@ hr{
 
     #wrapping_edit > form > #save_info{
         background-color: #E74B4E;
+        color: #fff;
     }
 
     #wrapping_edit > form > #save_info:hover{
         background-color: #B42F35;
         color:#fff;
+        cursor: pointer;
     }
 
     #wrapping_edit > form > #red_bord{

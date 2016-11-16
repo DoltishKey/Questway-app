@@ -22,7 +22,7 @@
                                             %if ad[6] == 1:
                                                 <p>Publicerad</p>
                                             %else:
-                                                <p>Väntar på att bli godkänd</p>
+                                                <p>Wating to be approved</p>
                                              %end
                                          </div>
                                     </div>

@@ -74,13 +74,19 @@ function checkCreateEmployer(){
                         document.getElementById("create_user").submit();
                        }
                        else if(response=='User exists'){
-                           //$('#error').html('Det finns redan en användare med angiven email!');
+                           $('#error').html('User exists');
+                           $('#error').show()
+                            return false;
                        }
                        else if(response=='Bad input'){
-                           //$('#error').html('Du måste skriva in en email!');
+                           $('#error').html('You must wright an email. ');
+                            $('#error').show()
+                           return false;
                        }
                        else{
-                           //$('#error').html('Något har blivit fel!');
+                           $('#error').html('Something has gone wrong!');
+                            $('#error').show()
+                            return false;
                        }
                    }
         });
@@ -105,22 +111,33 @@ function val_user_input(){
         var myVar=document.getElementById(checkUserInput[i]).value;
         if(myVar===null || myVar==='' || myVar===' '){
             document.getElementById(checkUserInput[i]).style.borderColor="red";
-            window.alert('Something went wrong. Check that you applied the correct information');
-        }
-        else if(i===2){
-            if(/\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(myVar)){
-                document.getElementById(checkUserInput[i]).style.borderColor="green";
-                return true;
-            }
-            else{
-                document.getElementById(checkProfileInput[i]).style.borderColor="red";
-                alert('The given email is not valid');
-                return false;
-            }
+            $('#error').html('Something went wrong. Check that you applied the correct information');
+            $('#error').show()
+            return false
         }
         else{
             document.getElementById(checkUserInput[i]).style.borderColor="green";
         }
+
+        if(i===2){
+            if(/^(()?\d{3}())?(-|\s)?\d{3}(-|\s)?\d{4}$/.test(myVar)){
+                document.getElementById(checkUserInput[i]).style.borderColor="green";
+            }
+            else{
+                document.getElementById(checkUserInput[i]).style.borderColor="red";
+                return false
+            }
+        }
+        else if(i==3){
+            if(/\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(myVar)){
+                document.getElementById(checkUserInput[i]).style.borderColor="green";
+            }
+            else{
+                document.getElementById(checkUserInput[i]).style.borderColor="red";
+                return false
+            }
+        }
+
     }
 }
 
@@ -261,6 +278,7 @@ function ColorSwitch(cookievalue){
             var myvar=document.getElementsByClassName("flexer_parent")[j].getAttribute("href");
             var stiped_var=myvar.split("/");
             if (JSON.parse(stiped_var[2])==cookies_parsed[i]){
+                alert('Kommer hit')
                 var hej=document.getElementsByClassName("go")[j];
                 hej.className += hej.className ? ' make_green' : 'make_green';
             }

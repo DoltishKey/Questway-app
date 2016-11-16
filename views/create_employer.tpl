@@ -11,9 +11,9 @@ Skriven av: Philip (HTML + CSS)
                     <h1>Create account</h1>
                     <p>You need an account for posting a quest and see your connections</p>
                     <form name="create_user" id="create_user" method="post" action="/do_create_user">
-                        <label for="first_name">First name</label>
+                        <label for="first_name">Firstname</label>
                         <input placeholder="First name" type="input" name="first_name" id="first_name" value="" required>
-                        <label for="last_name">Last name</label>
+                        <label for="last_name">Lastname</label>
                         <input placeholder="Surname" type="input" name="last_name" id="last_name" value="" required>
                         <label for="phone">Phone</label>
                         <input placeholder="Phone number" type="input" name="phone" id="phone" value="" required>

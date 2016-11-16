@@ -24,7 +24,7 @@
                     </a>
                     %end
                 %else:
-                    <p>Det finns inga nya annonser att godkänna</p>
+                    <p>There is no ads to approve.</p>
                 %end
             </div>
         </main>

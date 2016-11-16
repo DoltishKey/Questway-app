@@ -8,7 +8,7 @@
             <form action="/save_edith_profile" method="post">
                 <label for="firstname">Firstname</label>
                 <input type="text" id="firstname" name="firstname" value="{{user_info[1]}}" required/><br>
-                <label for="lastname">Surname</label>
+                <label for="lastname">Lastname</label>
                 <input type="text" id="lastname" name="lastname" value="{{user_info[2]}}" required/><br>
                 <label for="email">Email</label>
                 <input type="text" id="email" name="email" value="{{user_info[3]}}" required/><br>

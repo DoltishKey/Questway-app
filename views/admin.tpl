@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html>
-    
+
 	<head>
 		<title>Logga in</title>
 		<meta charset="utf-8">
@@ -17,7 +17,7 @@
         </header>
 		<content>
             <h1>Admin, {{user}}</h1>
-            <h2>Du är inloggad som {{level}}</h2>
+            <h2>You are loged in as {{level}}</h2>
             <a href="/log_out">Logga ut</a>
             <a href="/">Till start</a>
         </content>

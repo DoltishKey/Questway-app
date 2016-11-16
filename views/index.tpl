@@ -15,7 +15,7 @@
                     <h1>CONNECTS NEW BUSINESSES WITH STUDENTS IN SOUTHERN SWEDEN</h1>
                     <h2>Create a quest and find out who your new co-founder or team member will be.
                         Join us and get in touch with more people. All free!</h2>
-                    <a href="/create_employer" class="btn red">Create a quest</a>
+                    <a href="/login" class="btn red">Create a quest</a>
                     <!--<div class="more"></div>-->
                 </div>
             </div>
