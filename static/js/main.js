@@ -119,16 +119,7 @@ function val_user_input(){
             document.getElementById(checkUserInput[i]).style.borderColor="green";
         }
 
-        if(i===2){
-            if(/^(()?\d{3}())?(-|\s)?\d{3}(-|\s)?\d{4}$/.test(myVar)){
-                document.getElementById(checkUserInput[i]).style.borderColor="green";
-            }
-            else{
-                document.getElementById(checkUserInput[i]).style.borderColor="red";
-                return false
-            }
-        }
-        else if(i==3){
+        if(i==3){
             if(/\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(myVar)){
                 document.getElementById(checkUserInput[i]).style.borderColor="green";
             }
@@ -153,18 +144,7 @@ function val_application_input(){
             document.getElementById(checkApplicationInput[i]).style.borderColor="red";
             window.alert('Something went wrong. Check that you applied the correct information');
         }
-
-        if(i===1){
-            if(/^(()?\d{3}())?(-|\s)?\d{3}(-|\s)?\d{4}$/.test(myVar)){
-                document.getElementById(checkApplicationInput[i]).style.borderColor="green";
-            }
-            else{
-                document.getElementById(checkApplicationInput[i]).style.borderColor="red";
-                alert('The given phone is not valid');
-                return false;
-            }
-        }
-        else if(i===2){
+        if(i===2){
             if(/\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(myVar)){
                 document.getElementById(checkApplicationInput[i]).style.borderColor="green";
                 return true;
