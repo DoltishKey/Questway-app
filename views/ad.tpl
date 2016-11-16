@@ -86,19 +86,41 @@
             %end
             %if user_lvl == 1 or user_lvl == 2:
                 <div class="admin_setting">
-                    %if user_lvl == 1 or user_lvl == 2:
-                        <p>{{ad_info[5]}}</p>
-                        <a href="/job/applications/{{ad_info[0]}}">Applications</a>
-                        <a href="/admin_denie_ad/{{ad_info[1]}}/{{ad_info[0]}}">Delete ad</a>
-                        %if ad_info[6] == 1:
-                            <p>Publicerad</p>
-                        %else:
-                            <p>Väntar på att bli godkänd</p>
-                        %end
-                    %end
                     %if user_lvl == 1 and ad_info[6] == 0:
-                        <a href="/admin_approve_ad/{{ad_info[1]}}/{{ad_info[0]}}"><button>Godkänn och publicra annonsen</button></a>
-                        <a href="/admin_denie_ad/{{ad_info[1]}}/{{ad_info[0]}}"><button>Godkänn ej, annonsen tas bort</button></a>
+                        %if ad_info[6] == 1:
+                            <h2>Published</h2>
+                        %else:
+                            <p>Waiting for approval</p>
+                        %end
+                        <p>Created: {{made_date}}</p>
+                        <a href="/admin_approve_ad/{{ad_info[1]}}/{{ad_info[0]}}">
+                            <div id="approve_ad" class="btn">Approved
+                                <div class="go make_green"></div>
+                            </div>
+                        </a>
+                        <a href="/admin_denie_ad/{{ad_info[1]}}/{{ad_info[0]}}">
+                            <div id="decline_ad" class="btn">Declined
+                                <div class="go"></div>
+                            </div>
+                        </a>
+                    %end
+                    %if user_lvl == 1 or user_lvl == 2:
+                        %if ad_info[6] == 1:
+                            <h2>Published</h2>
+                        %else:
+                            <p>Waiting for approval</p>
+                        %end
+                        <p>Created: {{made_date}}</p>
+                        <a href="/job/applications/{{ad_info[0]}}">
+                            <div id="approve_ad" class="btn"> View Applications
+                                <div id="view_add_button" class="go make_green"></div>
+                            </div>
+                        </a>
+                        <a href="/admin_denie_ad/{{ad_info[1]}}/{{ad_info[0]}}">
+                            <div id="decline_ad" class="btn">Delete ad
+                                <div class="go"></div>
+                            </div>
+                        </a>
                     %end
                 </div>
             %end

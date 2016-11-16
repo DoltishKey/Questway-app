@@ -38,8 +38,16 @@
                                 %else:
                                     <p>Waiting to be approved, so there is no applications...yet.</p>
                                     %if user_lvl == 1 and ad_info[6] == 0:
-                                        <a href="/admin_approve_ad/{{ad_info[1]}}/{{ad_info[0]}}"><button>Godkänn och publicra annonsen</button></a>
-                                        <a href="/admin_denie_ad/{{ad_info[1]}}/{{ad_info[0]}}"><button>Godkänn ej, annonsen tas bort</button></a>
+                                        <a href="/admin_approve_ad/{{ad_info[1]}}/{{ad_info[0]}}">
+                                            <div id="approve_ad" class="btn">Approved
+                                                <div class="go make_green"></div>
+                                            </div>
+                                        </a>
+                                        <a href="/admin_denie_ad/{{ad_info[1]}}/{{ad_info[0]}}">
+                                            <div id="decline_ad" class="btn">Declined
+                                                <div class="go"></div>
+                                            </div>
+                                        </a>
                                     %end
                                 %end
                             %end
