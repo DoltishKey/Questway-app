@@ -5,6 +5,12 @@ import random, string
 import smtplib
 from email.MIMEMultipart import MIMEMultipart
 from email.MIMEText import MIMEText
+import json
+
+fileIn = open('keys.json', 'r')
+dataRead = json.load(fileIn)
+fileIn.close()
+mail_password = dataRead[3]['mail_password']
 
 
 def send_new_password_email(email, id, cursor):
@@ -54,6 +60,6 @@ def send_email(email, message):
 
     server = smtplib.SMTP('smtp.gmail.com', 587)
     server.starttls()
-    server.login(fromaddr, "petterson")
+    server.login(fromaddr, mail_password)
     server.sendmail(fromaddr, toaddr, msg.as_string())
     server.quit()
