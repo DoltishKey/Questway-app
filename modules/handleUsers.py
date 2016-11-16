@@ -2,7 +2,6 @@
 import bottle
 from bottle import route, get, post, run, template, error, static_file, request, abort, response, app
 from validate_email import validate_email
-import MySQLdb
 import hashlib
 
 

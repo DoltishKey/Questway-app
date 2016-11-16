@@ -41,7 +41,7 @@
                         <p>{{ad_info[11]}}</p>
                     %if ad_info[7]:
                         <h3> Company website: </h3>
-                        <a href="{{ad_info[7]}}">{{ad_info[7]}}</a>
+                        <a href="http://{{ad_info[7]}}" target="_blank">{{ad_info[7]}}</a>
                     %end
                     </div>
                 </div>

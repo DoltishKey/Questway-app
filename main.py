@@ -11,17 +11,26 @@ from modules import addmod
 from modules import mailmaster
 from bottle import route, get, post, run, template, error, static_file, request, redirect, abort, response, app
 from beaker.middleware import SessionMiddleware
+import json
 #import pymysql
 import MySQLdb
 
 db = None
 cursor = None
 
+fileIn = open('keys.json', 'r')
+dataRead = json.load(fileIn)
+fileIn.close()
+db_key = dataRead[1]['db_key']
+db_user = dataRead[2]['db_user']
+
+
+
 def call_database():
 	global db
 	global cursor
-	db = MySQLdb.connect(host="127.0.0.1", port=8889, user="root", passwd="root", db="questway")
-	#db = pymysql.connect(host="localhost", user="questway_user", passwd="!hakunamatata2;3", db="questway")
+	#db = MySQLdb.connect(host="127.0.0.1", port=8889, user="root", passwd="root", db="questway")
+	db = pymysql.connect(host="localhost", user=db_user, passwd=db_key, db="questway")
 	cursor = db.cursor()
 	return cursor
 

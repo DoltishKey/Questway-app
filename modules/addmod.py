@@ -1,7 +1,6 @@
 # *-* coding:utf-8 *-*
 from bottle import request, response
 import log
-import MySQLdb
 import os.path
 import random, string
 from PIL import Image
@@ -247,7 +246,7 @@ def apply(cursor, job_nr):
             return {'result':False, 'error':'Du måste ange en riktig email!'}
 
         if len(phone) < 8:
-            return {'result':False, 'error':'Phonenumber is too short!'}    
+            return {'result':False, 'error':'Phonenumber is too short!'}
 
         #Validates applicants
         additional_names = request.POST.getall('additional_name')
