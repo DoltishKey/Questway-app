@@ -119,16 +119,7 @@ function val_user_input(){
             document.getElementById(checkUserInput[i]).style.borderColor="green";
         }
 
-        if(i===2){
-            if(/^(()?\d{3}())?(-|\s)?\d{3}(-|\s)?\d{4}$/.test(myVar)){
-                document.getElementById(checkUserInput[i]).style.borderColor="green";
-            }
-            else{
-                document.getElementById(checkUserInput[i]).style.borderColor="red";
-                return false
-            }
-        }
-        else if(i==3){
+        if(i==3){
             if(/\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(myVar)){
                 document.getElementById(checkUserInput[i]).style.borderColor="green";
             }
@@ -154,20 +145,9 @@ function val_application_input(){
             window.alert('Something went wrong. Check that you applied the correct information');
         }
 
-        if(i===1){
-            if(/^(()?\d{3}())?(-|\s)?\d{3}(-|\s)?\d{4}$/.test(myVar)){
-                document.getElementById(checkApplicationInput[i]).style.borderColor="green";
-            }
-            else{
-                document.getElementById(checkApplicationInput[i]).style.borderColor="red";
-                alert('The given phone is not valid');
-                return false;
-            }
-        }
-        else if(i===2){
+        if(i===2){
             if(/\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(myVar)){
                 document.getElementById(checkApplicationInput[i]).style.borderColor="green";
-                return true;
             }
             else{
                 document.getElementById(checkApplicationInput[i]).style.borderColor="red";
@@ -181,6 +161,7 @@ function val_application_input(){
     }
 }
 
+
 /****** Validate user-input information while editing profile ********/
 /* Fixa att bara 1x felmeddelande dyker upp (inte ett nytt för varje fel). Meddela användaren mer
 precist vad för typ av fel som uppstod */
@@ -191,7 +172,7 @@ function val_profile_info(){
         theVar=theVar.trim();
         if(theVar===null || theVar==='' || theVar===' '){
             document.getElementById(checkProfileInput[i]).style.borderColor="red";
-            alert('Someth   ing went wrong. Check that you applied the correct information');
+            alert('Something went wrong. Check that you applied the correct information');
         }
         else if(i===2){
             if(/\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(theVar)){
@@ -215,8 +196,6 @@ function init(){
     var do_account=document.getElementById('create_account');
     var do_application=document.getElementById('create_application');
     var do_edith_profile=document.getElementById('save_info');
-    WriteCookie();
-    ReadCookie();
 
     /*delete_cookie();*/
 
@@ -244,22 +223,49 @@ function ReadCookie()
                // Get all the cookies pairs in an array
                cookiearray = allcookies.split(';');
 
+
                // Now take key value pair out of this array
                for(var i=0; i<cookiearray.length; i++){
                   name = cookiearray[i].split('=')[0];
                   value = cookiearray[i].split('=')[1];
-                  console.log("Key is : " + name + " and Value is : " + value);
+                  /*console.log("Key is : " + name + " and Value is : " + value);*/
                }
+               return cookiearray;
             }
 
 
+function GetMyAds(){
+    cookie_array= ReadCookie();
+    for(var i=0; i<cookiearray.length; i++){
+        if(cookie_array[i].split('=')[0] == " ad_applied_on"){
+            return i
+       }
+       else{
+           return false;
+       }
+   }
+}
+
 /* fixa att det är ID som hämtas */
-function WriteCookie()
+function WriteCookie(x)
     {
         var now = new Date();
         now.setMonth( now.getMonth() + 1 );
+        var cookie_array= ReadCookie();
+        var cooks=GetMyAds();
+        var my_cooks=cookie_array[cooks];
+        var new_cook=x;
+
+        if(cooks==false){
+            /* SKAPA EN NY KAKA */
+        }
+        else{
+            // Uppdatera befintlig kaka
+        }
+
         var nr1=1
-        var nr2=0
+        var nr2=x
+
         cookievalue=JSON.stringify([nr1, nr2]);
         ColorSwitch(cookievalue);
 
@@ -623,6 +629,8 @@ function apply_job(){
                 this_form.hide()
                 $('.application_message').show()
                 if (response == 'ok'){
+                    //var new_job=document.getElementById("apply_in_job").getAttribute("data-ad-id");
+                    //WriteCookie(new_job);
                     $('.application_message').addClass('success')
                     $('.application_message').find('h3').text('Yey!')
                     $('.application_message').find('p').text('Your application has been sent!')
