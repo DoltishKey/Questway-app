@@ -2,6 +2,7 @@
         <div class="logo_container">
             <a href="/admin">
                 <img src="/static/img/logo.svg" alt="questway_logo" />
+                <p id="beta_mode">Beta</p>
             </a>
         </div>
         <div class="hide_show_menu_container">

@@ -144,7 +144,6 @@ function val_application_input(){
             document.getElementById(checkApplicationInput[i]).style.borderColor="red";
             window.alert('Something went wrong. Check that you applied the correct information');
         }
-
         if(i===2){
             if(/\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(myVar)){
                 document.getElementById(checkApplicationInput[i]).style.borderColor="green";

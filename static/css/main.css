@@ -887,6 +887,16 @@ span.orange{
 
 }
 
+.admin_setting{
+    overflow: hidden;
+    padding-bottom: 40px;
+}
+
+
+.admin_setting .more_members{
+    margin: 10px auto;
+}
+
 .admin_setting .go{
     float:right;
     margin:auto;
@@ -898,6 +908,27 @@ span.orange{
 
 .admin_setting .make_green{
     background-image:url(/static/img/checkbox.svg);
+}
+
+.admin_setting .icon.approved{
+    background-image:url(/static/img/checkbox.svg);
+    background-size: 60%;
+}
+
+.admin_setting .icon.declined{
+    background-image:url(/static/img/icons/cross_white.svg);
+    background-color: #E74B4E;
+    background-size: 60%;
+}
+
+.admin_setting .icon.veiw{
+
+}
+
+.admin_setting .icon.delte{
+    background-image:url(/static/img/icons/cross_white.svg);
+    background-color: #E74B4E;
+    background-size: 60%;
 }
 
 #view_add_button{
@@ -1208,7 +1239,7 @@ hr{
     margin: 10px auto 25px auto;
 }
 
-#more_members{
+.more_members{
     margin-bottom: 15px;
     -webkit-border-radius: 35px;
     -moz-border-radius: 35px;
@@ -1223,7 +1254,7 @@ hr{
 }
 
 
-#more_members .icon{
+.more_members .icon{
     height: 40px;
     width: 40px;
     -webkit-border-radius: 50%;
@@ -1237,14 +1268,14 @@ hr{
     background-repeat: no-repeat;
     background-position: center center;
 }
-#more_members p{
-    padding-top: 0px;
+.more_members p{
+    padding-top: 0px !important;
     color: #fff;
     font-family: 'montserratregular';
     font-size: 16px;
 }
 
-#more_members:hover{
+.more_members:hover{
     cursor:pointer;
     background-color: rgba(255, 255, 255, 0.2);
 }

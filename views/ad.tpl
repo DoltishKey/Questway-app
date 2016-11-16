@@ -75,7 +75,7 @@
                         </div>
                         <hr>
                         <div id="group_application"></div>
-                        <div id="more_members"><div class="icon"></div><p>Add team member +</p></div>
+                        <div id="more_members" class="more_members"><div class="icon"></div><p>Add team member +</p></div>
                         <label for="message">Message</label>
                         <textarea name="message" id="message" maxlength="500"></textarea>
                         <p id="form_counter">( 500 )</p>
@@ -93,16 +93,8 @@
                             <p>Waiting for approval</p>
                         %end
                         <p>Created: {{made_date}}</p>
-                        <a href="/admin_approve_ad/{{ad_info[1]}}/{{ad_info[0]}}">
-                            <div id="approve_ad" class="btn">Approved
-                                <div class="go make_green"></div>
-                            </div>
-                        </a>
-                        <a href="/admin_denie_ad/{{ad_info[1]}}/{{ad_info[0]}}">
-                            <div id="decline_ad" class="btn">Declined
-                                <div class="go"></div>
-                            </div>
-                        </a>
+                        <a href="/admin_approve_ad/{{ad_info[1]}}/{{ad_info[0]}}" class="more_members"><div  class="icon approved"></div><p>Approved</p></a>
+                        <a href="/admin_denie_ad/{{ad_info[1]}}/{{ad_info[0]}}" class="more_members"><div  class="icon declined"></div><p>Declined</p></a>
                     %end
                     %if user_lvl == 1 or user_lvl == 2:
                         %if ad_info[6] == 1:
@@ -111,16 +103,8 @@
                             <p>Waiting for approval</p>
                         %end
                         <p>Created: {{made_date}}</p>
-                        <a href="/job/applications/{{ad_info[0]}}">
-                            <div id="approve_ad" class="btn"> View Applications
-                                <div id="view_add_button" class="go make_green"></div>
-                            </div>
-                        </a>
-                        <a href="/admin_denie_ad/{{ad_info[1]}}/{{ad_info[0]}}">
-                            <div id="decline_ad" class="btn">Delete ad
-                                <div class="go"></div>
-                            </div>
-                        </a>
+                        <a href="/job/applications/{{ad_info[0]}}" class="more_members"><div class="icon veiw"></div><p>View Applications</p></a>
+                        <a href="/admin_denie_ad/{{ad_info[1]}}/{{ad_info[0]}}" class="more_members"><div class="icon delte"></div><p>Delete ad</p></a>
                     %end
                 </div>
             %end
