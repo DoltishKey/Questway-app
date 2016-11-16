@@ -227,12 +227,17 @@ nav a.currentMenuItem{
 
 footer{
     background-color: #272E3F;
-    padding: 40px 0px 0 0;
+    padding: 10px 0px 0 0;
     color:#fff;
 }
 
 footer a{
-    color: #fff;
+    color:#2CBD66;
+    margin:10px;
+}
+
+footer a:hover{
+
 }
 
 footer a img{
@@ -240,13 +245,47 @@ footer a img{
 }
 
 .footer_box{
-    padding:2% 0 2% 5%;
-    width:90%;
+    float:right;
 }
 
 .footer_box > ul{
     list-style: none;
     padding:10px;
+}
+
+.footer_box > ul > li{
+    padding-top:3px;
+    padding-bottom:8px;
+    font-size:15px;
+    font-weight: 300;
+    line-height: 1.5;
+}
+
+.footer_box > ul > li > a{
+    position:relative;
+}
+
+
+
+.footer_box > ul > li > a:before{
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background-color: #2BCAD9;
+    visibility: hidden;
+    -webkit-transform: scaleX(0);
+    transform: scaleX(0);
+    -webkit-transition: all 0.3s ease-in-out 0s;
+    transition: all 0.3s ease-in-out 0s;
+}
+
+.footer_box > ul > li > a:hover:before {
+  visibility: visible;
+  -webkit-transform: scaleX(1);
+  transform: scaleX(1);
 }
 
 .footer_box > h4{
@@ -285,7 +324,6 @@ footer a img{
 .copy_container{
     background-color: #272E3F;
     padding:10px;
-    border-top: solid 1px #fff;
 }
 
 .logo_box{
@@ -690,9 +728,62 @@ input:focus, textarea:focus {
 
 
 
-
+/* Admin settings! - info about an ad + buttons to  Approve/decline ads*/
 .admin_setting{
     background-color: #2BCAD9;
+}
+
+.admin_setting > p:first-child, .admin_setting > h2{
+    text-align: center;
+    padding:25px 0 5px 0;
+    font-size: 160%;
+    color:#fff;
+}
+
+.admin_setting > p:nth-child(2){
+    text-align: center;
+    font-size: 80%;
+    color:#fff;
+    padding:0 0 20px 0;
+}
+
+.btn{
+    color:#fff;
+}
+
+.btn:hover{
+    background-color: #272E3F;
+
+}
+
+.admin_setting .go{
+    float:right;
+    margin:auto;
+    position:relative;
+    top:2.49px;
+    padding:1.8%;
+    background-image:url(/static/img/icons/cross_white.svg);
+}
+
+.admin_setting .make_green{
+    background-image:url(/static/img/checkbox.svg);
+}
+
+#view_add_button{
+    background-image:url(/static/img/icons/arrow_white.svg);
+}
+
+#approve_ad{
+    text-align: center;
+    margin-left:25%;
+    padding:0 5px;
+}
+
+#decline_ad{
+    text-align-last: center;
+    float:right;
+    margin-right:25%;
+    padding:0 5px;
 }
 
 
@@ -1093,10 +1184,18 @@ hr{
 }
 
 .make_green{
-    background-image:none;
-    background-color:green;
+    background-image: url(/static/img/checkbox.svg);
+    background-color:#2CBD66;
+    opacity:1;
+    -o-transition: opacity .1s ease-out;
+    -ms-transition: opacity .1s ease-out;
+    -moz-transition: opacity .1s ease-out;
+    -webkit-transition: opacity .1s ease-out;
 }
 
+.flexer_parent:hover .make_green{
+    background-color:green;
+}
 
 .user_icon{
     display: inline-block;
@@ -2395,12 +2494,11 @@ hr{
     }
 
     .footer_box{
-        padding:2%;
-        width:29.3%;
-        display:inline-block;
-        float:left;
-        margin-left:auto;
-        margin-right: auto;
+        position:relative;
+        float:right;
+        bottom:70px;
+        margin: auto 9% auto auto;
+
 
     }
 
@@ -2481,10 +2579,6 @@ hr{
     /*MQ -  FOOTER - Starts */
     .footer_box > ul{
         padding-left:0;
-    }
-
-    .copy_container{
-        margin-top:240px;
     }
 
     .question_footer{

@@ -422,13 +422,14 @@ def spec_ad(ad_nr):
 	cursor = call_database()
 	ad_info = addmod.get_spec_ads(cursor, ad_nr)
 	tags = addmod.get_spec_tags(cursor, ad_nr)
+	strip_time = ad_info[0][5].strftime('%Y-%m-%d')
 	if ad_info:
 		if log.is_user_logged_in() == True:
 			lvl = log.get_user_level(cursor)
-			return template('ad.tpl', pageTitle = ad_info[0][3], user_lvl = lvl, ad_info = ad_info[0], tags = tags)
+			return template('ad.tpl', pageTitle = ad_info[0][3], user_lvl = lvl, ad_info = ad_info[0], made_date=strip_time, tags = tags)
 		elif ad_info[0][6] == 1:
 			lvl = 0
-			return template('ad.tpl', pageTitle = ad_info[0][3], user_lvl = lvl, ad_info = ad_info[0], tags = tags)
+			return template('ad.tpl', pageTitle = ad_info[0][3], user_lvl = lvl, ad_info = ad_info[0], made_date=strip_time, tags = tags)
 		else:
 			redirect('/')
 	else:
