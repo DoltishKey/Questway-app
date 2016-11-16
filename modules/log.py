@@ -51,14 +51,17 @@ def validate_autho():
 
 def is_user_logged_in():
     '''Checks that the user in logged in, used when just status is needed'''
-    session = request.environ.get('beaker.session')
-    try:
-        session['userId']
-        if request.environ.get('REMOTE_ADDR') == session['userIP']:
-            return True
-        else:
+    if request.get_cookie("accepting_cookies_from_questway"):
+        session = request.environ.get('beaker.session')
+        try:
+            session['userId']
+            if request.environ.get('REMOTE_ADDR') == session['userIP']:
+                return True
+            else:
+                return False
+        except:
             return False
-    except:
+    else:
         return False
 
 def get_user_id_logged_in():

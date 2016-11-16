@@ -149,6 +149,12 @@ header{
     color: #fff;
 }
 
+#beta_mode{
+    color: #fff;
+    text-align: right;
+    font-family: 'montserrathairline';
+}
+
 .hide_show_menu_container{
     display: inline-block;
     float: right;
@@ -317,8 +323,8 @@ footer a img{
 #container_of_content > .container > .about_qw_intro{
     font-weight: 800;
     width:90%;
-    font-size:110%;
-    font-family: 'montserratregular', sans-serif;
+    /*font-size:110%;*/
+    font-family: 'montserrathairline', sans-serif;
 }
 
 #container_of_content > .container > #about_list > ul{
@@ -337,6 +343,7 @@ footer a img{
     width:40%;
 }
 
+
 .qw_team{
     background-color:#2BCAD9;
     padding-top:25px;
@@ -344,95 +351,151 @@ footer a img{
     text-align: center;
 }
 
+.qw_team h2{
+    font-size: 1.4em;
+    padding: 10px 0px 40px 0px;
+}
+
 .main_jubo > .qw_team > h1{
     font-size:240%;
     font-weight: 900;
 }
 
-.qw_team_profile > ul{
-    width:85%;
-    margin:0 auto;
-    padding-top:27px;
+#about_questway{
+    background-color: #fff;
+    padding-bottom: 40px;
 }
 
-.qw_team_profile > ul > h2{
-    width:90%;
-    font-family: 'montserratregular', sans-serif;
-    font-size: 180%;
-    font-weight:bold;
-    margin:0 auto;
+#about_questway h2{
+    color: #E74B4E;
+    font-size: 1.4em;
+    width: 95%;
+    margin: 40px auto;
+}
+
+#about_questway .btn{
+    background-color: #E74B4E;
     text-align: center;
+    color: #fff;
+    margin: 0px auto;
+    display: block;
+    width: 250px;
+    padding: 15px;
+    -webkit-border-radius: 30px;
+    -moz-border-radius: 30px;
+    border-radius: 30px;
+
 }
 
-.qw_team_profile > ul > p{
-    width:85%;
-    text-align: left;
-    padding:5px 0 10px 7px;
-    color:#000;
-    font-family: 'montserrathairline', sans-serif;
-    font-weight: 600;
+#about_questway .btn:hover{
+    background-color: #B42F35;
 }
 
-.qw_team_profile > ul > li{
-    width:100%;
-    padding:5px 0 0 5px;
+.order{
+    display: none;
+    width: 65%;
+    margin: 0 auto;
 }
 
-.qw_team_profile > ul > li > img{
-    width:100%;
-    height:290px;
-}
-
-.qw_team_profile > ul > li > .bckgrd > h4{
-    width:90%;
-    margin:0 auto;
-    font-family: 'montserratregular', sans-serif;
-    font-weight: 600;
-}
-
-
-/*  Hypothetical design ABOUT-US
-.qw_team_profile > ul > li > .bckgrd{
-    width:150px;
-    height:150px;
-    background: url("/static/img/qwback.jpg");
-    background-size: 150px 150px;
+.num{
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
     border-radius: 50%;
-    margin:0 auto;
+    background-color: #E74B4E;
+    width: 60px;
+    height: 60px;
+    text-align: center;
+    line-height: 60px;
+    color: #fff;
+    display: inline-block;
+}
+.order h4{
+    display: inline-block;
+    color: #E74B4E;
+    margin-left: 15px;
+    font-size: 1.2em;
 }
 
-.qw_team_profile > ul > li > .bckgrd > h4{
-    width:140%;
-    text-align:center;
-    line-height: 1.18;
-    letter-spacing: 1.2px;
-    margin-left: -30px;
+.bullet{
+    padding: 5px 0px;
+    width: 100%;
+    margin: 30px auto;
 }
 
-.qw_team_profile > ul > li > .bckgrd > h4{
-    visibility: hidden;
+[class~='bullet']:last-of-type {
+    margin-bottom: 50px;
 }
 
-.qw_team_profile > ul > li > .bckgrd:hover > h4{
-    visibility: visible !important;
+.bullet p{
+    padding-top: 12px;
+    text-align: center;
+    width: 80%;
+    margin: 0 auto;
+    line-height: 1.7em;
 }
 
-.qw_team_profile > ul > li > .bckgrd > h4:hover{
-    visibility: hidden;
+.bullet .icon{
+    background-color: #E74B4E;
+    width: 150px;
+    height: 150px;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    border-radius: 50%;
+    margin: 0 auto;
+    background-position: center center;
+    background-repeat: no-repeat;
 }
 
-.qw_team_profile > ul > li{
-    width:48%;
-    margin:0 auto;
+.icon.rocket{
+    background-image: url('/static/img/icons/rocket.svg');
+    background-size: 80%;
 }
 
-.qw_team_profile > ul > p{
-    padding-top: 10px;
+.icon.letter{
+    background-image: url('/static/img/icons/bulb.svg');
+    background-size: 70%;
 }
+
+.icon.bulb{
+    background-image: url('/static/img/icons/magic.svg');
+    background-size: 70%;
+}
+
 
 .qw_team_profile{
-    padding-bottom:35px;
+    float: left;
+    box-sizing: border-box;
+    width: 95%;
+    padding: 10px;
 }
+
+.qw_team_profile img{
+    width: 100%;
+}
+
+.qw_team_profile h3{
+    padding: 10px 0px;
+    font-size: 1.2em;
+}
+
+.qw_team_profile p{
+    font-family: 'montserratlight'
+}
+
+.qw_team_profile .mail{
+    padding: 10px 0px;
+    color: #272E3F;
+}
+
+.qw_team{
+    overflow: hidden;
+    padding: 40px 0px 40px 0px;
+}
+
+.qw_team:after{
+    clear: both;
+}
+
  Hypothetical design - END*/
 
 /* ABOUT PAGE - END */
@@ -562,6 +625,71 @@ input:focus, textarea:focus {
     background-color: #B42F35;
 }
 
+.main_jubo.about{
+    height: 400px;
+    background-image: url('/static/img/team.jpg');
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover  ;
+    background-color: #A3A3A3;
+    background-blend-mode: multiply;
+    background-attachment: fixed;
+}
+
+
+#qw_code{
+    padding: 100px 0px 0px 0px;
+}
+
+#qw_code h2{
+    font-size: 1.6em;
+    text-align: center;
+    color: #E74B4E;
+}
+
+code{
+    display: block;
+    margin: 30px auto;
+    padding: 30px 10px;
+    width: 90%;
+    box-sizing: border-box;
+    font-size: 1em;
+    background-color: #f3f3f3;
+    border-bottom: 1px solid #e6e6e6;
+}
+
+span.blue{
+    color: #2BCAD9;
+}
+
+span.purple{
+    color: #AD1FCA;
+}
+
+span.green{
+    color: #2CBD66;
+}
+
+span.orange{
+    color: #FF8528;
+}
+
+.gutter{
+    width: 10px;
+}
+
+.lineno{
+    color: #999;
+    display: inline-block;
+    padding: 0.15em 1.2em;
+    margin: 0;
+}
+
+
+.main_jubo.about h1{
+    padding-top: 100px;
+}
+
 .filter{
     text-align: center;
 }
@@ -667,6 +795,7 @@ input:focus, textarea:focus {
 .application_message.success, .message.success{
     color: #2CBD66;
     border: 4px solid #2CBD66;
+    padding-bottom: 50px;
 }
 
 .about.application .message p, .about.application .application_message p{
@@ -681,6 +810,7 @@ input:focus, textarea:focus {
 .message.error, .application_message.error{
     color: #E74B4E;
     border: 4px solid #E74B4E;
+    padding-bottom: 50px;
 }
 
 .about.application .message.error h3, .about.application .application_message.error h3{
@@ -988,14 +1118,94 @@ hr{
 
 #more_members{
     margin-bottom: 15px;
+    -webkit-border-radius: 35px;
+    -moz-border-radius: 35px;
+    border-radius: 35px;
+    border: 4px solid #fff;
+    width: 250px;
+    padding: 5px 0px;
+    text-align: right;
+    display: flex;
+    align-items: center;
+    margin-bottom: 40px;
+}
+
+
+#more_members .icon{
+    height: 40px;
+    width: 40px;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    border-radius: 50%;
+    display: inline-block;
+    background-color: #2CBD66;
+    margin-left: 5px;
+    margin-right: 10px;
+    background-image: url('/static/img/icons/user_icon_white.svg');
+    background-repeat: no-repeat;
+    background-position: center center;
+}
+#more_members p{
+    padding-top: 0px;
+    color: #fff;
+    font-family: 'montserratregular';
+    font-size: 16px;
 }
 
 #more_members:hover{
     cursor:pointer;
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
+#form_counter{
+    padding-top: 0px;
+    font-family: 'montserratregular';
+    font-size: 16px;
+    color: #fff;
+    margin-bottom: 40px;
+}
+
+.remove_more_members{
+    position: relative;
+    width: 30px;
+    height: 30px;
+    left: 90%;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    border-radius: 50%;
+    background-color: #E74B4E;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.remove_more_members .line{
+    height: 4px;
+    width: 80%;
+    background-color: #fff;
+    line-height: 40px;
+    margin: 0px auto;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    border-radius: 4px;
+}
+
+.remove_more_members:hover{
+    background-color: #B42F35;
+    cursor: pointer;
 }
 
 .btn.submit.red{
     background-color: #E74B4E;
+}
+
+.btn.red{
+    border: 4px solid #fff;
+    -webkit-border-radius: 25px;
+    -moz-border-radius: 25px;
+    border-radius: 25px;
+    padding: 10px 60px;
+    box-sizing: border-box;
 }
 
 .btn.submit.red:hover{
@@ -2038,6 +2248,7 @@ hr{
     .main_jubo h2{
         font-size: 1.4em;
         line-height: 1.4em;
+        margin-bottom: 40px;
     }
 
     .ads .container, .new_ads .container{
@@ -2266,6 +2477,15 @@ hr{
         padding: 0px 15px;
         visibility: hidden;
     }
+
+    .remove_more_members{
+        position: relative;
+        left: 110%;
+        top: -180px;
+        width: 30px;
+        height: 30px;
+    }
+
     .go{
         width:30px;
         height:30px;
@@ -2406,12 +2626,17 @@ hr{
 
     /* MQ-About page */
 
-    #container_of_content > .container > .about_qw_intro{
-        font-size:210%;
+    .main_jubo.about{
+        height: 500px;
+        background-blend-mode: normal;
     }
 
-    .main_jubo > #container_of_content > .container > .about_questway{
-        font-size:400%;
+    code{
+        display: block;
+        margin: 30px auto;
+        padding: 40px 80px;
+        width: 55%;
+        font-size: 1.2em;
     }
 
     #container_of_content > .container > #about_list{
@@ -2445,7 +2670,7 @@ hr{
     }
 
     .qw_team_profile{
-        width:30%;
+        width:33%;
         display: inline-block;
         padding-bottom:30px;
         text-align: left;
@@ -2473,6 +2698,19 @@ hr{
         width:100%;
         margin:0;
         line-height: 110%;
+    }
+
+    #about_questway h2{
+        width: 65%;
+    }
+
+    .order{
+        display: block;
+    }
+
+    .bullet{
+        width: 60%;
+        border-left: 4px solid #E74B4E;
     }
 
     /*MQ - about page END */

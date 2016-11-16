@@ -75,9 +75,9 @@
                         </div>
                         <hr>
                         <div id="group_application"></div>
-                        <div id="more_members">Add team member +</div>
+                        <div id="more_members"><div class="icon"></div><p>Add team member +</p></div>
                         <label for="message">Message</label>
-                        <textarea name="message" id="message" maxlength="500"></textarea><br>
+                        <textarea name="message" id="message" maxlength="500"></textarea>
                         <p id="form_counter">( 500 )</p>
                         <input class="btn submit red" type="submit" value="Skicka" id="create_application">
                     </form>

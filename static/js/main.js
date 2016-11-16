@@ -31,6 +31,7 @@ function checkLogIn(){
     ****************/
     $('#logIn').submit(function(event){
          event.preventDefault(event);
+         set_accept_cookie()
         $.ajax({
             type: 'POST',
             url: '/ajax',
@@ -135,13 +136,24 @@ function val_application_input(){
             document.getElementById(checkApplicationInput[i]).style.borderColor="red";
             window.alert('Something went wrong. Check that you applied the correct information');
         }
+
+        if(i===1){
+            if(/^(()?\d{3}())?(-|\s)?\d{3}(-|\s)?\d{4}$/.test(myVar)){
+                document.getElementById(checkApplicationInput[i]).style.borderColor="green";
+            }
+            else{
+                document.getElementById(checkApplicationInput[i]).style.borderColor="red";
+                alert('The given phone is not valid');
+                return false;
+            }
+        }
         else if(i===2){
             if(/\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(myVar)){
-                document.getElementById(checkUserInput[i]).style.borderColor="green";
+                document.getElementById(checkApplicationInput[i]).style.borderColor="green";
                 return true;
             }
             else{
-                document.getElementById(checkProfileInput[i]).style.borderColor="red";
+                document.getElementById(checkApplicationInput[i]).style.borderColor="red";
                 alert('The given email is not valid');
                 return false;
             }
@@ -331,14 +343,21 @@ function ad_members_to_application(){
                 <input type="text" name="additional_phone" id="additional_phone"><br> \
                 <label for="additional_email">Email</label> \
                 <input type="text" name="additional_email" id="additional_email"><br> \
-            </div>\
-            <hr>'
+                <div class="remove_more_members"><div class="line"></div></div>\
+            <hr>\
+            </div>'
         $(inputNode).appendTo(members);
         added = $(members).find('.member')
-        remove_extra_member(added)
+        remove_extra_member()
     });
 }
 
+function remove_extra_member(){
+    $('.remove_more_members').click(function(){
+        parent = $(this).parents('.member')
+        parent.remove()
+    });
+}
 
 
 function labels_handeling(){

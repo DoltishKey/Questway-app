@@ -26,6 +26,7 @@
         <a href="/">
             <img src="/static/img/logo.svg" alt="questway_logo" />
         </a>
+        <p id="beta_mode">Beta</p>
     </div>
     <div class="hide_show_menu_container">
         <div>

@@ -21,6 +21,7 @@ def call_database():
 	global db
 	global cursor
 	db = MySQLdb.connect(host="127.0.0.1", port=8889, user="root", passwd="root", db="questway")
+	#db = pymysql.connect(host="localhost", user="questway_user", passwd="!hakunamatata2;3", db="questway")
 	cursor = db.cursor()
 	return cursor
 
@@ -422,13 +423,14 @@ def spec_ad(ad_nr):
 	cursor = call_database()
 	ad_info = addmod.get_spec_ads(cursor, ad_nr)
 	tags = addmod.get_spec_tags(cursor, ad_nr)
+	ogs = {'title':ad_info[0][3], 'img':ad_info[0][10]}
 	if ad_info:
 		if log.is_user_logged_in() == True:
 			lvl = log.get_user_level(cursor)
-			return template('ad.tpl', pageTitle = ad_info[0][3], user_lvl = lvl, ad_info = ad_info[0], tags = tags)
+			return template('ad.tpl', pageTitle = ad_info[0][3], user_lvl = lvl, ad_info = ad_info[0], tags = tags, ogs = ogs)
 		elif ad_info[0][6] == 1:
 			lvl = 0
-			return template('ad.tpl', pageTitle = ad_info[0][3], user_lvl = lvl, ad_info = ad_info[0], tags = tags)
+			return template('ad.tpl', pageTitle = ad_info[0][3], user_lvl = lvl, ad_info = ad_info[0], tags = tags, ogs = ogs)
 		else:
 			redirect('/')
 	else:
