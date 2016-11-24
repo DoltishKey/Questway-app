@@ -28,8 +28,8 @@
                         </div>
                     </div>
                     <div class="more_ad_opts">
-                            <a href="/job/{{ad_info[0]}}">View ad</a>
-                            <a href="/admin_denie_ad/{{ad_info[1]}}/{{ad_info[0]}}">Delete ad</a>
+                            <a href="/job/{{ad_info[0]}}">View quest</a>
+                            <a href="/admin_denie_ad/{{ad_info[1]}}/{{ad_info[0]}}">Delete quest</a>
                         %end
                     </div>
                             %if not applications:

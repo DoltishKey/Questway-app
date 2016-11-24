@@ -5,10 +5,10 @@
         % include('nav_employers.tpl')
         <main class="user_ads">
             <div class="container">
-                <h2>Ads</h2>
+                <h2>Quests</h2>
                 <div>
                     %if len(ads) == 0:
-                        <p>There is no ads... yet.</p>
+                        <p>There is no quests... yet.</p>
                     %else:
                         %for ad in ads:
                             <a href="/job/applications/{{ad[0]}}" class="ad flexer_parent">
@@ -17,15 +17,15 @@
                                         <h4>{{ad[3]}}</h4>
                                         <div class="status">
                                             %if ad[6] == 1:
-                                                <p>Publicerad</p>
+                                                <p>Published</p>
                                             %else:
-                                                <p>Väntar på att bli godkänd</p>
+                                                <p>Waiting to be approved</p>
                                              %end
                                          </div>
                                     </div>
                                     <div class="num_applications">
                                         <div class="user_icon red"></div>
-                                        <p>{{ad[12]}} <span>applications<span></p>
+                                        <p>{{ad[12]}} <span>Applications<span></p>
                                     </div>
                                     <div class="go"></div>
                                  </div>
@@ -34,7 +34,7 @@
                     %end
                 </div>
                 <div class="new_ad overlay_open">
-                    <div class="btn red">Create new ad +</div>
+                    <div class="btn red">Create new Quest +</div>
                 </div>
             </div>
             <div class="shadow">
@@ -42,7 +42,7 @@
                     <div class="close close_icon"></div>
                     <hr>
                     <div class="container">
-                        <h2>New ad</h2>
+                        <h2>New Quest</h2>
                         <form action="/post_job" method="post" id="new_ad" enctype="multipart/form-data">
                             <div class="new_ad_about_comp">
                                 <div class="img_cover" style="background-image:url(../{{user_info[8]}});">

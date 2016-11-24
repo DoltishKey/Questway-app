@@ -41,12 +41,12 @@ function checkLogIn(){
                     document.getElementById("logIn").submit();
                    }
                    else if(response=='error'){
-                       $('#error').html('Fel användarnamn eller lösenord!');
+                       $('#error').html('Wrong username or password!');
                     var errordisplay = document.getElementById("error");
                     errordisplay.style.display = "block";
                    }
                    else{
-                       $('#error').html('Något har blivit fel!');
+                       $('#error').html('Something has gone terribly wrong!');
                    }
                }
         });
@@ -360,9 +360,9 @@ function ad_members_to_application(){
         var members = $('#group_application')
         var inputNode = '\
             <div class="member"> \
-                <label for="additional_name">Namn</label> \
+                <label for="additional_name">Name</label> \
                 <input type="text" name="additional_name" id="additional_name"><br> \
-                <label for="additional_phone">Tele</label> \
+                <label for="additional_phone">Phone</label> \
                 <input type="text" name="additional_phone" id="additional_phone"><br> \
                 <label for="additional_email">Email</label> \
                 <input type="text" name="additional_email" id="additional_email"><br> \

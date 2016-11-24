@@ -7,7 +7,7 @@
             <div class="container">
                 <div class="heading">
                     <h2>Profile</h2>
-                    <a href="/admin_ads/{{user_info[0]}}">Ads</a>
+                    <a href="/admin_ads/{{user_info[0]}}">Quests</a>
                 </div>
                 <form action="/update_user/{{user_info[0]}}" method="post">
                     <label for="firstname">First name</label>

@@ -19,7 +19,7 @@
             <h1>Admin, {{user}}</h1>
             <h2>You are loged in as {{level}}</h2>
             <a href="/log_out">Logga ut</a>
-            <a href="/">Till start</a>
+            <a href="/">Home</a>
         </content>
 	</body>
 </html>

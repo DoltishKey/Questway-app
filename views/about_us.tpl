@@ -67,7 +67,7 @@
                     </div>
                     <div class="bullet">
                         <div class="icon rocket"></div>
-                        <p>Entrepreneurs who want to connect posts a short desription of their idéa and what they need help with.</p>
+                        <p>Entrepreneurs who wish to connect post a short description of their idéa and what they need help with.</p>
                     </div>
                     <div class="order">
                         <div class="num">2</div>
@@ -83,7 +83,7 @@
                     </div>
                     <div class="bullet">
                         <div class="icon bulb"></div>
-                        <p>When a match is done, you get together creates some magic and comes up with brilliant idéas.</p>
+                        <p>When a match is done, you get together and come up with brilliant idéas and create some magic.</p>
                     </div>
                     <a href="/create_employer" class="btn red">JOIN US</a>
                 </div>

@@ -17,9 +17,9 @@
             <ul>
                 <li>
                     %if request.path == '/admin':
-                        <a class="currentMenuItem" href="/admin">Your ads</a>
+                        <a class="currentMenuItem" href="/admin">Your Quests</a>
                     %else:
-                        <a href="/admin">Your ads</a>
+                        <a href="/admin">Your Quests</a>
                     %end
                 </li>
                 <li>

@@ -60,7 +60,7 @@
                         <h3></h3>
                         <p></p>
 
-                        <a href="/" class="btn submit red">Back to all ads</a>
+                        <a href="/" class="btn submit red">Back to all Quests</a>
 
                     </div>
                     <form data-ad-id="{{ad_info[0]}}" id="apply_in_job">

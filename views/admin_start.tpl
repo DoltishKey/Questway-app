@@ -5,7 +5,7 @@
         %include('nav_admin.tpl')
         <main class="new_ads">
             <div class="container">
-                <h2>New ads</h2>
+                <h2>New Quests</h2>
                 %if ads:
                     %for ad in ads:
                     <a class="ad flexer_parent" href="/job/{{ad[0]}}">
@@ -24,7 +24,7 @@
                     </a>
                     %end
                 %else:
-                    <p>There is no ads to approve.</p>
+                    <p>There is no quests to approve.</p>
                 %end
             </div>
         </main>
